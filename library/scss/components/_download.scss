@@ -1,0 +1,98 @@
+@use "../partials/mixins";
+
+.block-download-holder{
+	
+	.block-download{
+		margin: 60px auto 0 auto;
+
+		.textholderer{
+			text-align: center;
+
+			.download-tekst {
+				display: inline-block;
+
+				h3{
+					margin-top: 0;
+				}
+			}
+		}
+
+		.download-tekst{
+			padding: 45px 0 0 0;
+			text-align: center;
+
+			@include mixins.MQ(S){
+				text-align: left;
+
+				h2{
+					hyphens: none;
+				}
+
+			}
+
+			h3,
+			h2,
+			p,
+			ul{
+				text-align: left;
+			}
+		}
+
+		@include mixins.MQ(S){
+
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			.download-tekst{
+				flex-basis: 100%;
+				flex-grow: 0;
+				flex-shrink: 0;
+				padding: 0 0 0 0;
+			}
+
+		}
+
+		.download-image{
+
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: row;
+
+			@include mixins.MQ(S){
+				justify-content: flex-end;
+			}
+
+			img{
+				width: 90%;
+				max-width: 300px;
+				height: auto;
+				box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+				margin-left: 5%;
+
+				@include mixins.MQ(XS){
+					width: 100%;
+					margin-left: 0;
+				}
+
+				@include mixins.MQ(S){
+					margin-left: 0;
+					margin-right: 130px;
+				}
+
+			}
+		}
+
+		.blue-button{
+			margin-top: 30px;
+		}
+
+	}
+
+	&.layout-RL .block-download{
+		flex-direction: row-reverse;
+	}
+
+}

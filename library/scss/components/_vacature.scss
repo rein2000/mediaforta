@@ -1,0 +1,192 @@
+.single-vacature{
+
+	.page-header-holder{
+		background: $dark;
+
+		.page-header{
+			padding-top: 60px;
+		}
+	}
+
+	.page-header-holder .page-header .tekst-holder h1,
+	#breadcrumbs a, 
+	#breadcrumbs a:visited{
+		color: $white;
+	}
+
+	#breadcrumbs a:after{
+	    background-position: -20px -1px;
+	}
+
+	.solliciteer-nu{
+		margin-top: 24px;
+	}
+
+	.vacature-tags{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		margin-bottom: 24px;
+
+		.vacature-tag{
+			font-family: $moskau;
+			font-size: 2em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.4;
+			letter-spacing: normal;
+			color: $white;
+			margin-right: 30px;
+		}
+	}
+
+	.page-header-holder .page-header .tekst-holder p.vacature-field{
+		font-family: $moskau-md;
+		font-size: 1.8em;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.56;
+		letter-spacing: normal;
+		color: $meadow;
+		margin: 12px 0 0 0;
+		padding: 0;
+
+		&.vacature-field-location{
+			padding-left: 30px;
+			position: relative;
+
+			&:before{
+				content: "";
+				display: block;
+				width: 16px;
+				height: 22px;
+				background: transparent;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-image: url(../images/sprite.svg);
+				background-position: -7px -463px;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&.vacature-field-language{
+			padding-left: 30px;
+			position: relative;
+
+			&:before{
+				content: "";
+				display: block;
+				width: 24px;
+				height: 22px;
+				background: transparent;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-image: url(../images/sprite.svg);
+				background-position: -41px -463px;
+				background-repeat: no-repeat;
+			}			
+		}
+	}
+
+	.vacature-content-holder{
+		position: relative;
+		padding: 60px 0 0 0;
+
+		@include MQ(M){
+			padding: 60px 0;
+		}
+
+	}
+
+	.vacature-sidebar-holder{
+		position: relative;
+	}
+
+	.vacature-sidebar{
+		width: 100%;
+		padding: 0 0 60px 0;
+
+		@include MQ(M){
+			padding: 60px 0;
+			max-width: 180px;
+			margin-left: 90px;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+
+		p.title{
+			font-family: $moskau;
+			font-size: 2.2em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.2;
+			letter-spacing: normal;
+			color: $dark;
+			margin: 0 0 24px 0;
+			hyphens: auto;
+		}
+
+		.vacature-delen{
+			padding: 24px;
+			position: relative;
+			margin-top: 30px;
+
+			img.bg-img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+			}
+
+			.contenter{
+				position: relative;
+				z-index: 1;
+			}
+
+			h1{
+				font-family: $moskau;
+				font-size: 1.6em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.3;
+				letter-spacing: normal;
+				text-align: left;
+				color: $dark;
+				margin-bottom: 18px;
+
+				@include MQ(M){
+					text-align: center;
+				}
+
+			}
+
+			.addtoany_shortcode .addtoany_list{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: flex-start;
+
+				@include MQ(M){
+					align-items: center;
+					flex-direction: column;
+				}				
+			}
+		}
+
+	}
+
+	.newsletter-holder{
+		margin-top: 30px;
+	}
+
+}

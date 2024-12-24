@@ -1,0 +1,1930 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+/*****************************************************************
+Site Name:
+Author:
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	font-family: variables.$moskau;
+	font-size: 62.5%;
+	line-height: 1.5;
+	color: variables.$text-color;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 0 18px;
+
+	@include mixins.MQ(S){
+		padding: 0 21px;
+	}
+
+	@include mixins.MQ(M){
+		padding: 0 30px;
+	}
+
+	@include mixins.MQ(L){
+	    padding: 0px 60px;
+	}
+
+	@include mixins.MQ(XL){
+	    padding: 0px 118px;
+	}	
+
+	@include mixins.MQ(1600px){
+		max-width: 1600px;
+	}		
+
+	&.no-padding{
+		padding: 0;
+	}
+
+	&.wrap-xs{
+		max-width: 720px;
+	}	
+
+	&.wrap-s{
+		max-width: 1040px;
+	}	
+
+	&.wrap-m{
+		max-width: 1180px;
+	}	
+	
+	&.wrap-l{
+		max-width: 1260px;
+	}	
+
+}
+
+.running-tekst{
+
+	h1,
+	h2{
+		@include variables.Subtitel;
+		&{
+			max-width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0;
+		}
+	}
+
+	h3{
+		@include variables.Ondertitel-L;
+		&{
+			margin-bottom: 15px;
+		}
+	}
+
+	h4{
+		font-family: variables.$moskau-md;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1.8em;
+		line-height: 1;
+		color: variables.$dark;
+		margin: 27px 0 12px 0;
+
+		@include mixins.MQ(S){
+			font-size: 2em;
+		}
+
+	}
+
+	h5{
+		font-family: variables.$moskau-md;
+		font-size: 1.6em;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		font-weight: 300;
+		letter-spacing: normal;
+		margin: 9px 0 6px 0;
+		color: variables.$bayoux;
+	}
+
+	h2,
+	h3,
+	h4 {
+		strong{
+			font-weight: 400;
+		}
+	}
+
+	h2 + h1{
+		margin-top: 0;
+	}
+
+	p{
+		font-family: variables.$dm;
+		font-size: 1.8em;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		letter-spacing: normal;
+		color: variables.$dark;
+	}
+
+	li{
+		font-family: variables.$dm;
+		font-size: 1.8em;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		letter-spacing: normal;
+		color: variables.$dark;
+	}	
+
+	li li{
+		font-size: 1em;		
+	}
+
+	p{
+		margin-bottom: 6px;
+		hyphens: none;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}	
+
+	ul,
+	ol{
+		margin-bottom: 12px;
+	}
+
+	ol{
+		list-style: decimal; 
+		list-style-position: inside;
+
+		li{
+			margin-bottom: 6px;
+		}
+	
+		li li{
+			padding-left: 21px;
+			margin-bottom: 0;
+		}
+
+		ol{
+			margin-bottom: 9px;
+			margin-top: 3px;
+		}
+	}
+
+	ul li{
+		padding-left: 21px;
+		position: relative;
+
+		&:before{
+			content: "";
+			display: block;
+			width: 4px;
+			height: 4px;
+			background-color: variables.$bayoux;
+			position: absolute;
+			top: 6px;
+			left: 5px;
+			border-radius: 50%;
+		}
+	}
+
+	a,
+	a:visited {
+		font-family: variables.$moskau-md;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		letter-spacing: normal;
+		color: variables.$bayoux;
+		transition: all .2s ease;
+
+		&:hover{
+			color: variables.$ribbon;
+			text-decoration: none;
+		}
+
+		&.button,
+		&.blue-button{
+			color: white;
+		}
+	}
+
+	p,
+	li{
+
+		a,
+		a:visited {
+			border-bottom: 1px solid variables.$spring;
+
+			&:hover{
+				border-bottom: 1px solid variables.$ribbon;
+			}
+		}		
+
+	}
+
+}
+
+.page-template-page-simple .running-tekst{
+
+	h1{
+		@include variables.Subtitel;
+		&{
+			max-width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0;
+		}
+	}
+
+	h2{
+		@include variables.Ondertitel-L;
+		&{
+			margin-bottom: 15px;
+			text-align: left;
+			max-width: 100%;
+			margin-top: 40px;
+		}
+	}
+
+	h3{
+		font-family: variables.$moskau-md;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1.8em;
+		line-height: 1;
+		color: variables.$dark;
+		margin: 27px 0 12px 0;
+
+		@include mixins.MQ(S){
+			font-size: 2em;
+		}
+
+	}
+
+	h4{
+		font-family: variables.$moskau-md;
+		font-size: 1.6em;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		font-weight: 300;
+		letter-spacing: normal;
+		margin: 9px 0 6px 0;
+		color: variables.$bayoux;
+	}
+
+	h2,
+	h3,
+	h4 {
+		strong{
+			font-weight: 400;
+		}
+	}
+}
+
+.block-tekst-foto-holder .tekst-holder{
+	max-width: 100%;
+}
+
+.block-tekst-foto-holder .tekst-holder img{
+	height: 40px;
+	width: auto;
+}
+
+.block-tekst-foto-holder .tekst-holder img + h1{
+	margin-top: 20px;
+	background-color: red;
+}
+
+.block-tekst-foto-holder .running-tekst h2{
+	text-align: left;
+	margin-bottom: 32px;
+	margin-top: 24px;
+
+	&:first-child{
+		margin-top: 0;
+	}
+}
+
+.page-template-page-contact #contact-button{
+	display: none;
+}
+
+#main{
+	position: relative;
+	z-index: 200;
+
+	@include mixins.MQ(M){
+		min-height: 320px;
+	}
+}
+
+#menu-hider{
+	width: 100%;
+	height: 105px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+
+}
+
+
+.sharing {
+
+	&.hor-centered {
+		.addtoany_shortcode .addtoany_list{
+			align-items: center;
+			flex-direction: row;
+			justify-content: center;
+
+			@include mixins.MQ(S){
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;	
+			}
+		}
+	} 
+
+	.addtoany_shortcode .addtoany_list{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-top: 10px;
+
+		@include mixins.MQ(M){
+			margin-top: 30px;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;	
+		}
+
+		a{
+			margin: 15px 15px 0 0;
+			padding: 0;
+			display: inline-block;
+			width: 38px;
+			height: 38px;
+
+			background-image: url(../images/sprite.svg);
+			background-repeat: no-repeat;
+			outline: none;
+
+			@include mixins.MQ(S){
+				margin: 0 0 10px 0;
+
+				&:last-child{
+					margin-bottom: 0;
+				}			
+			}
+
+
+			&:hover,
+			&:focus{
+				outline: none;
+			}
+
+			span,
+			svg{
+				display: none;
+			}
+
+			&.a2a_button_facebook{
+				background-position: -90px -609px;
+			}
+			
+			&.a2a_button_twitter{
+				background-position: -136px -611px;
+			}
+
+			&.a2a_button_whatsapp{
+				background-position: -47px -611px;
+			}
+
+			&.a2a_button_email{
+				background-position: 0px -611px;
+			}
+
+			&.a2a_button_linkedin{
+				background-position: -47px -611px;
+			}
+
+			&.a2a_button_copy_link{
+				background-position: -180px -609px;
+			}
+		}
+	}
+}
+
+.bg-slate{
+
+	.running-tekst{
+
+		h1{
+			color: white;
+		}
+
+		p,
+		li{
+
+			color: variables.$white;
+		}
+	
+
+		li{
+
+			&:before{
+				background-color: variables.$white;
+			}
+		}
+
+		h2{
+			color: variables.$white;
+		}
+
+		h3{
+			color: variables.$white;
+		}
+
+		h4{
+			color: variables.$white;
+		}
+
+		a,
+		a:visited {
+			color: variables.$white;
+
+			&:hover{
+				color: variables.$white;
+			}
+		}
+	}
+
+}
+
+#breadcrumbs a{
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.overview-item p.link,
+#breadcrumbs a,
+.running-tekst a.with-arrow {
+
+	position: relative;
+	padding-right: 24px;
+	transition: all .2s ease;
+
+	&:after{
+		content: "";
+		display: block;
+		width: 12px;
+		height: 12px;
+		background: transparent;
+		position: absolute;
+		top: 50%;
+		margin-top: -7px;
+		right: 4px;
+		background-image: url(../images/sprite.svg);
+		background-position: -805px -1051px;
+		background-repeat: no-repeat;
+	}
+
+}
+
+.overview-item p.link:after{
+	bottom: 1px;
+}
+
+.kaartje-holder{
+	padding: 60px 0 90px 0;
+}
+
+.block-running-tekst{
+	padding: 60px 0;
+
+	.running-tekst {
+		max-width: 600px;
+	}
+}
+
+.block-tekst-kolom.block-oplevering + .block-running-tekst{
+	padding-top: 0;
+}
+
+.single .reading-time{
+	padding-left: 18px;
+	position: relative;
+
+	&:before{
+		content: "";
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-image: url(../images/sprite.svg);
+		background-position: -169px -528px;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: -1px;
+		left: 0;
+	}	
+}
+
+.single .block-running-tekst{
+	.running-tekst {
+		max-width: 690px;
+
+		img{
+			margin: 12px auto;
+		}
+
+		.wp-block-embed__wrapper,
+		img.size-large{
+			width: 100%;
+			max-width: 690px;
+			margin: 12px auto;
+		}
+
+		.wp-block-embed__wrapper {
+			margin: 24px auto;
+		}
+
+		blockquote {
+			font-size: 1em;
+			margin: 60px 0;
+			position: relative;
+
+			&:before{
+				content: "";
+				width: 58px;
+				height: 48px;
+				background-image: url(../images/sprite.svg);
+				background-position: -117px -298px;
+				background-repeat: no-repeat;
+				display: block;
+				position: absolute;
+				top: -22px;
+				left: -22px;			
+			}
+
+			.shareable{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				margin-top: 12px;
+
+				.shareable-caption{
+					font-family: variables.$moskau-md;
+					font-size: 1.6em;
+					font-weight: 400;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.2;
+					letter-spacing: normal;
+					color: variables.$dodger;	
+				}
+
+				.twitter-share-button{
+					display: inline-block;
+					width: 25px;
+					height: 21px;
+					background-image: url(../images/sprite.svg);
+					background-position: -60px -522px;
+					background-repeat: no-repeat; 
+					margin-left: 3px;
+					transform: scale(.75, .75);
+				}
+
+			}
+	
+			p{
+				font-family: variables.$moskau;
+				font-size: 3.8em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: italic;
+				line-height: 1.2;
+				letter-spacing: normal;
+				color: variables.$dark;
+				font-weight: 400;
+			}
+
+		}
+	}
+}
+
+.selectie-procedure-slang {
+	padding: 0 24px;
+	margin: 45px 0;
+
+	.selectie-procedure-step{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin: 12px 0;
+
+		.nr{
+			font-family: variables.$moskau-bd;
+			font-size: 2.2em;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1;
+			letter-spacing: normal;
+			color: #2c354f;
+			flex-basis: 30px;
+			flex-shrink: 0;
+		}
+	}
+}
+
+@include mixins.MQ(840px){
+
+	.lang-en .selectie-procedure-slang {
+		background-image: url(../images/selectieprocedure-EN.png);
+	}
+
+	.lang-fr .selectie-procedure-slang {
+		background-image: url(../images/selectieprocedure-FR.png);
+	}
+
+	.selectie-procedure-slang {
+		position: relative;
+		width: 840px;
+		height: 770px;
+		background-image: url(../images/selectieprocedure.png);
+		background-position: center top;
+		background-repeat: no-repeat;
+		margin: 45px 0;
+		padding: 0;
+
+		.selectie-procedure-step{
+			position: absolute;
+			width: 285px;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+
+			.nr{
+				font-family: variables.$moskau-bd;
+				font-size: 2.2em;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				color: #2c354f;
+				flex-basis: 30px;
+				flex-shrink: 0;
+			}
+
+			&:nth-child(1){
+				top: 135px;
+				right: 15px;
+			}
+
+			&:nth-child(2){
+				top: 290px;
+				left: 0;
+			}
+
+			&:nth-child(3){
+				top: 445px;
+				right: 15px;
+			}
+
+			&:nth-child(4){
+
+				top: 600px;
+				left: 0;
+
+			}
+		}
+	}
+
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+
+	color: variables.$link-color;
+	outline: none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: variables.$link-hover;
+	}
+
+	/* on click */
+	&:active {
+		outline: none;
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		outline: none;
+	}
+}
+
+
+a.go-to-scroll-details, 
+a.go-to-scroll-details:visited {
+		
+	/* on hover */
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+.page-id-10 a.naam-oplossingen,
+.page-id-10 a:visited.naam-oplossingen,
+.page-id-12 a.naam-bronnen,
+.page-id-12 a:visited.naam-bronnen,
+.page-id-8 a.naam-waarom,
+.page-id-8 a:visited.naam-waarom{
+	color: variables.$crimson;
+}
+
+.content-holder-paralax{
+	background-color: variables.$white;
+	position: relative;
+	z-index: 200;
+}
+
+
+@include mixins.MQ(S){
+
+	.block-oplevering .aantal-items-1{
+		justify-content: center;
+	}
+
+	.block-oplevering .aantal-items-2{
+		justify-content: flex-end;
+	}
+
+}
+
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 400;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-size: 2.5em;
+	line-height: 1.333em;
+}
+
+h2, .h2 {
+	font-size: 1.75em;
+	line-height: 1.4em;
+}
+
+h3, .h3 {
+	font-size: 1.125em;
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+#container {
+	position: relative;
+}
+
+.header {
+	background: variables.$iron;
+	z-index: 2300;
+	position: relative;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+
+	.mobile-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-top: 65px;
+		height: 100%;
+		z-index: 30;
+		max-height: 0;
+		overflow: hidden;
+		transition: all .2s ease;
+
+		@include mixins.MQ(S){
+			padding-top: 93px;
+		}
+
+		li a{
+			font-family: variables.$moskau-md;
+			font-size: 1.8em;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1;
+			letter-spacing: normal;
+		}
+
+		li{
+			padding: 10px 0;
+		}
+
+	}
+
+	.mobile-menu-section {
+		padding: 15px 0;
+
+		.menu-title{
+			text-align: center;
+			font-family: variables.$moskau-md;
+			font-size: 1.8em;
+			font-weight: 400;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1;
+			letter-spacing: normal;
+			margin-top: 18px;
+			margin-bottom: 9px;
+		}
+
+		&.bg-slate,
+		&.bg-dark{
+
+			a,
+			a:visited,
+			.menu-title{
+				color: white;
+			}
+
+		}
+
+		&.mobile-menu-languages {
+			padding: 36px 0;
+
+			ul{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: row;
+
+				li{
+					width: 36px;
+					height: 36px;
+					border-radius: 18px;
+					margin: 0 6px;
+					padding: 0;
+					border: 2px solid variables.$white;
+					text-align: center;
+
+					span,
+					a{
+						font-size: 1.4em;
+						line-height: 34px;
+						text-decoration: none;
+					}
+
+					&.active{
+						background: variables.$white;
+
+						a{
+							color: variables.$dark;
+						}
+					}
+				}
+			}
+		}
+	}	
+
+	.mobile-menu-main{
+		li a{
+			color: variables.$dark;
+		}
+
+		li:hover a{
+			color: variables.$crimson;
+		}
+	}
+
+	.mobile-menu-resources{
+		ul{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
+}
+
+#main{
+
+	@media (max-width: 1019px) {
+		padding-top: 92px;
+	}
+
+	@media (max-width: 720px) {
+		padding-top: 65px;
+	}
+
+}
+
+@media (max-width: 1019px) {
+
+	.header {
+		position: fixed;
+		width: 100%;
+	}
+
+	.single-case #main{
+		padding-top: 0;
+	}	
+
+	body #container:after{
+		width: 100%;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: variables.$dark;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		z-index: 300;
+		transition: all .1s ease-in-out;
+	}
+
+}
+
+
+// .hamburger-box{
+// 	top: 3px;
+// }
+
+.hamburger{
+	outline: none;
+}
+
+header.header #searchform{
+	display: none;
+
+	input{
+		margin-bottom: 0;
+	}
+
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-left: 32px;
+
+	label{
+		display: none;
+	}
+
+	input[type="search"],
+	input[type="text"]{
+		height: 30px;
+		line-height: 30px;
+		border-radius: 15px;
+		background-color: variables.$slate;
+		color: variables.$white;
+		font-family: variables.$moskau;
+		font-size: 1.6em;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		letter-spacing: normal;
+		border: none;
+		width: 120px;
+		transition: all .2s ease;
+		background-image: url(../images/search-icon.png);
+		background-position: 12px 5px;
+		background-repeat: no-repeat;
+		background-size: auto 18px;
+		padding: 0 18px 0 36px;
+
+		&:focus{
+			width: 210px;
+		}
+	}
+
+	::-webkit-input-placeholder { 
+		color: rgba(255,255,255,.66);
+	}
+
+	:-ms-input-placeholder { 
+		color: rgba(255,255,255,.66);
+	}
+
+	::placeholder {
+		color: rgba(255,255,255,.66);
+	}
+
+	button{
+		display: none;
+	}
+
+}
+
+#inner-banner,
+#inner-header{
+	padding: 20px 6px 20px 21px;
+	max-width: 1600px;
+	margin: 0 auto;
+
+	@include mixins.MQ(S){
+		padding: 24px 6px 24px 21px;
+	}
+
+	@include mixins.MQ(XL){
+		padding: 23px 21px 7px 21px;
+	}	
+}
+
+#inner-header {
+	z-index: 2300;
+	position: relative;
+    background: white;
+
+	.inner-header-top{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.inner-header-left{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+
+		.nav{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;		
+		}
+
+	}	
+
+	.inner-header-bottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.nav{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			margin-top: -6px;
+
+			li a{
+				padding: 0 11px 32px 11px;
+				color: white;
+			}
+
+			li:first-child a{
+				padding-left: 0;
+			}
+		}
+
+	}	
+
+	nav{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		ul.wp-nav{
+			margin-right: 20px;					
+		}
+	}
+
+
+    .languages li.menu-item-has-children:hover ul li:hover a,
+    .languages li.menu-item-has-children li:hover,
+    .languages li.menu-item-has-children span:hover,
+	.languages li.menu-item-has-children span a:hover, 
+	.languages li.menu-item-has-children li a:hover,
+	a:hover, a:focus, 
+	a:visited:hover, a:visited:focus{
+		color: variables.$dodger;
+		text-decoration: none;
+	}
+
+	a.button{
+		color: white;
+		background-color: variables.$blue;
+		border-color: variables.$blue;
+
+		&:hover, &:focus, 
+		&:visited:hover, &:visited:focus{
+			color: white;
+			background-color: variables.$dark;
+			border-color: variables.$dark;
+		}
+
+		&:before,
+		&:after{
+			background-position: -20px 0;
+		}
+	}
+
+}
+
+// body.lang-fr{
+
+// 	#inner-header {
+
+// 		@include MQ(L){
+// 			padding: 24px 6px 24px 21px;
+// 		}
+
+// 		@include MQ(XL){
+// 			padding: 0 21px;
+// 		}
+
+// 	}	
+
+// }
+
+.logo {
+	background-image: url(../images/mediaforta-logo-blue.svg);
+	display: inline-block;
+	width: 125px;
+	height: 25px;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	text-indent: -9999px;
+	margin: 0;
+    flex: 0 0 125px;
+
+	@include mixins.MQ(S){
+		width: 210px;
+		height: 45px;
+	    flex: 0 0 210px;
+	}
+
+	@include mixins.MQ(M){
+		width: 150px;
+		height: 45px;
+	    flex: 0 0 150px;
+	    background-size: contain;
+	    background-position: center center;
+	}
+
+	@include mixins.MQ(L){
+		width: 210px;
+		height: 45px;
+	    flex: 0 0 210px;
+	}		
+
+	@include mixins.MQ(1200px){
+		background-size: 100% auto;
+	    width: 130px;
+	    flex: 0 0 130px;
+	    top: -2px;
+	    position: relative;
+	}
+
+	@include mixins.MQ(1200px){
+		background-size: auto 100%;
+	    width: 210px;
+	    flex: 0 0 210px;
+	    top: 0;
+	}	
+
+}
+
+// body.lang-fr .logo{
+
+// 	@include MQ(1200px){
+// 		width: 45px;
+// 		height: 45px;
+// 	    flex: 0 0 45px;
+// 		background-size: auto 100%;
+// 	}	
+
+// 	@include MQ(1400px){
+// 		background-size: 100% auto;
+// 	    width: 130px;
+// 	    flex: 0 0 130px;
+// 	    top: -2px;
+// 	    position: relative;
+// 	}	
+
+// }
+
+// body.lang-en .logo{
+
+// 	@include MQ(1200px){
+// 		width: 45px;
+// 		height: 45px;
+// 	    flex: 0 0 45px;
+// 		background-size: auto 100%;
+// 	}
+
+// 	@include MQ(1300px){
+// 		background-size: 100% auto;
+// 	    width: 130px;
+// 	    flex: 0 0 130px;
+// 	    top: -2px;
+// 	    position: relative;
+// 	}
+
+// 	@include MQ(1400px){
+// 		background-size: auto 100%;
+// 	    width: 210px;
+// 	    flex: 0 0 210px;
+// 	    top: -2px;
+// 	}	
+
+// }
+
+.sticky-holder{
+	width: 100% !important;
+	transition: all .2s ease;
+
+	&.uk-sticky-fixed {
+		background-color: white;
+		z-index: 400;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	li{
+		margin: 9px auto;
+
+		@include mixins.MQ(S){
+			margin: 0;
+		}
+	}
+}
+
+.uk-subnav > * > :first-child {
+	color: variables.$dodger;
+}
+
+.block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	header p{
+		max-width: 600px;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		hyphens: none;
+		text-align: center;
+
+		@include mixins.MQ(S){
+			text-align: center;
+		}
+
+	}
+
+	.button-holder{
+		text-align: center;
+
+		.button{
+			margin: 0 auto;
+		}
+	}	
+
+}
+
+.block .case-slider header p{
+	text-align: left;
+}
+
+.bg{
+	background-color: variables.$iron;
+}
+
+.bg-porcelain{
+	background-color: variables.$porcelain;
+}
+
+.bg-iron{
+	background-color: variables.$iron;
+}
+
+.bg-haze{
+	background-color: variables.$haze;
+}
+
+.bg-dodger,
+.bg-blue{
+	background-color: variables.$dodger;
+}
+
+.bg-mist{
+	background-color: variables.$mist;
+}
+
+.bg-slate{
+	background-color: variables.$slate;
+}
+
+.bg-red{
+	background-color: variables.$red;
+}
+
+.bg-dark{
+	background-color: variables.$dark;
+}
+
+.bg-white{
+	background-color: variables.$white;
+}
+
+.bg-beige-1{
+	background-color: variables.$beige-1;
+}
+
+.bg-beige-2{
+	background-color: variables.$beige-2;
+}
+
+.bg-beige-3{
+	background-color: variables.$beige-3;
+}
+
+.bg-beige-4{
+	background-color: variables.$beige-4;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+
+// .inner-header-left .dropdown-nav.nav{
+// 	margin-left: 30px;
+// }
+
+.inner-header-left #menu-people-menu > li,
+.inner-header-left .dropdown-nav.nav > li{
+	padding: 34px 40px 34px 0;
+
+	& > a{
+		border-radius: 4px;
+		padding: 8px 10px;
+
+		&.foldout_link{
+			padding-right: 25px;
+
+			&:after{
+				display: block;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				margin-top: -8px;
+				right: 5px;
+				background-image: url(../images/sprite.svg);
+				background-repeat: no-repeat;
+				background-position: -85px -733px;
+				content: "";
+			}
+
+		}
+
+	}
+
+	&.current-menu-item > a,
+	&:hover > a{
+		background: rgba(80, 79, 255, 0.07);		
+
+		&:after{
+			background-position: -103px -733px;
+		}
+
+	}
+
+} 
+
+.parent-pageid-6938,
+.parent-pageid-6227,
+.parent-pageid-7036,
+.parent-pageid-6275,
+.parent-pageid-7007,
+.parent-pageid-6924,
+.parent-pageid-2111,
+.parent-pageid-225,
+.parent-pageid-2110{
+
+	#foldout_link-10213,
+	#foldout_link-10255,
+	#foldout_link-10192{
+		background: rgba(80, 79, 255, 0.07);		
+		color: variables.$blue;
+
+		&:after{
+			background-position: -103px -733px;
+		}	
+
+	}
+	
+}
+
+.inner-header-left .nav.dropdown-nav{
+	margin-left: 30px;
+}
+
+.nav {
+	border-bottom: 0;
+	margin: 0;
+
+	li {
+
+		a {
+			@include variables.Top-navigatie;
+
+			&{
+				display: block;
+				text-decoration: none;
+				padding: 10px 20px;
+				text-align: center;
+				color: variables.$dark;
+			}
+
+			@include mixins.MQ(1200px){
+				padding: 10px 20px;			
+			}	
+
+			&.transparent-button{
+				font-size: 1.8em;
+			}								
+		}
+
+		&.current_page_item a,
+		&:hover a, 
+		&:focus a{
+			color: variables.$crimson;
+		}
+
+		&.menu-item-has-children{
+
+			& > a:after {
+				display: inline-block;
+				width: 20px;
+				height: 14px;
+				background-position: -23px -733px;
+				background-image: url(../images/sprite.svg);
+				content: "";
+				margin-left: 6px;
+			}
+
+			&:hover > a{
+				color: variables.$spring;
+
+				&:after {
+					background-position: -3px -733px;
+				}
+			}
+		} 
+
+
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			margin-top: 0;
+			border-top: 0;
+			position: absolute;
+			visibility: hidden;
+			z-index: 8999;
+
+			li {
+
+				a {
+					padding: 0 0 0 30px;
+					display: block;
+					width: 180px;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {
+					top:0;
+					left:100%;
+				}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover > ul {
+			top: auto;
+			visibility:visible;
+		}
+
+	} /* end .menu li */
+
+} /* end .nav */
+
+.uk-slider-nav {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 24px 0 0 0;
+
+    @include mixins.MQ(S){
+		padding: 30px 0 0 0;
+    }
+
+	li {
+		padding: 3px 6px;
+
+	    @include mixins.MQ(S){
+			padding: 12px 6px;
+	    }
+
+		&.uk-active,
+		&:hover{
+			a {
+				background: variables.$porcelain;
+
+			    @include mixins.MQ(S){
+					background: variables.$porcelain;
+				    border: 2px solid variables.$porcelain;
+			    }
+			}			
+		}
+
+		a {
+		    display: block;
+		    width: 12px;
+		    height: 12px;
+		    border-radius: 50%;	
+		    background-color: variables.$mist;
+		    transition: all .2s ease-in-out;
+
+		    @include mixins.MQ(S){
+			    width: 12px;
+			    height: 12px;
+			    border: 2px solid #BBBDBF;
+		    }
+		
+		    @include mixins.MQ(M){
+			    width: 14px;
+			    height: 14px;
+			    border: 2px solid #BBBDBF;
+		    }
+		}
+	} 
+
+}
+
+.bg-haze .uk-slider-nav {
+
+	li {
+
+		&.uk-active,
+		&:hover{
+			a {
+				background: #0237ff;
+
+			    @include mixins.MQ(S){
+				    border: 2px solid #0237ff;
+			    }
+			}			
+		}
+
+		a {
+		    background-color: variables.$mist;
+		}
+
+
+	} 
+
+}
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+
+		// .hentry {
+
+		// 	header {
+		// 	}
+
+		// 	footer {
+		// 		p {
+		// 			margin: 0;
+		// 		}
+		// 	}
+
+		// } /* end .hentry */
+
+		.single-title,
+		.page-title,
+		.entry-title {
+			margin: 0;
+		}
+
+		.single-title {}
+
+		.page-title {}
+
+		.entry-title {}
+
+		.archive-title {}
+
+		/* want to style individual post classes? Booya! */
+		.post-id {}         /* post by id (i.e. post-3) */
+		.post {}            /* general post style */
+		.page {}            /* general article on a page style */
+		.attachment {}      /* general style on an attatchment */
+		.sticky {}          /* sticky post style */
+		.hentry {}          /* hentry class */
+		.category-slug {}   /* style by category (i.e. category-videos) */
+		.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+		/* post meta */
+		.byline {
+			margin: 0;
+
+			time {}
+		}
+
+		/* entry content */
+		.entry-content {
+			padding: 0;
+
+			p {
+				margin: 0;
+			}
+
+			table {
+				width: 100%;
+				border: 1px solid variables.$gray;
+				margin-bottom: 1.5em;
+
+				caption {
+					margin: 0 0 7px;
+					font-size: 0.75em;
+					color: variables.$meta-gray;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+
+			tr {
+				border-bottom: 1px solid variables.$gray;
+
+				&:nth-child(even) {
+					background-color: variables.$light-gray;
+				}
+			}
+
+			td {
+				padding: 7px;
+				border-right: 1px solid variables.$gray;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			th {
+				background-color: variables.$light-gray;
+				border-bottom: 1px solid variables.$gray;
+				border-right: 1px solid variables.$gray;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			blockquote {
+				margin: 0 0 1.5em 0.75em;
+				padding: 0 0 0 0.75em;
+				border-left: 3px solid variables.$blue;
+				font-style: italic;
+				color: variables.$meta-gray;
+
+				&:before {}
+
+			}
+
+			dd {
+				margin-left: 0;
+				font-size: 0.9em;
+				color: #787878;
+				margin-bottom: 1.5em;
+			}
+
+			img {
+				margin: 0 0 1.5em 0;
+				max-width: 100%;
+				height: auto;
+			}
+
+			/*
+			image alignment on a screen this size may be
+			a bit difficult. It's set to start aligning
+			and floating images at the next breakpoint,
+			but it's up to you. Feel free to change it up.
+			*/
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+
+			.size-auto,
+			.size-full,
+			.size-large,
+			.size-medium,
+			.size-thumbnail {
+				max-width: 100%;
+				height: auto;
+			}
+
+			pre {
+				background: variables.$black;
+				color: variables.$light-gray;
+				font-size: 0.9em;
+				padding: 1.5em;
+				margin: 0 0 1.5em;
+				border-radius: 3px;
+			}
+
+		} /* end .entry-content */
+
+		.wp-caption {
+			max-width: 100%;
+			background: #eee;
+			padding: 5px;
+
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			p.wp-caption-text {
+				font-size: 0.85em;
+				margin: 4px 0 7px;
+				text-align: center;
+			}
+
+		} /* end .wp-caption */
+
+	// the tag output
+	.tags {
+		margin: 0;
+	}
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.pagination,
+.wp-prev-next {
+	margin: 1.5em 0;
+}
+
+.pagination{
+    text-align: center;
+
+    ul {
+      display: inline-block;
+      background-color: variables.$white;
+      white-space: nowrap;
+      padding: 0;
+      clear: both;
+      border-radius: 3px;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+      float: left;
+      display: inline;
+      overflow: hidden;
+      border-right: 1px solid variables.$gray;
+    }
+
+    a, span {
+      margin: 0;
+      text-decoration: none;
+      padding: 0;
+      line-height: 1em;
+      font-size: 1em;
+      font-weight: normal;
+      padding: 0.75em;
+      min-width: 1em;
+      display: block;
+      color: variables.$blue;
+
+      &:hover, &:focus {
+      	background-color: variables.$blue;
+      	color: variables.$white;
+      }
+    }
+
+    .current{
+    	cursor: default;
+    	color: variables.$text-color;
+
+    	&:hover, &:focus {
+    		background-color: variables.$white;
+    		color: variables.$text-color;
+    	}
+    }
+
+} /* end .bones_page_navi */
+
+a#CybotCookiebotDialogPoweredbyCybot {
+	display: none;
+}
+
+.debug{
+	display: none;
+}

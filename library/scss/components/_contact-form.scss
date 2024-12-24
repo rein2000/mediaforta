@@ -1,0 +1,468 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.uk-modal{
+
+    padding: 118px 32px 32px 32px;
+    z-index: 3000;
+
+	@include mixins.MQ(M){
+	    padding: 32px 32px;
+	}
+
+	.uk-modal-dialog{
+		width: 1360px;
+		border-radius: 8px;
+	}
+
+	&.modal-contact .uk-modal-body{
+		padding: 75px 20px 45px 20px;
+
+		@include mixins.MQ(S){
+			padding: 90px 120px;
+		}
+	}
+
+	.uk-modal-close-default {
+		display: block;
+		width: 32px;
+		height: 32px;
+		top: 20px;
+		right: 20px;
+		background-image: url(../images/sprite.svg);
+		background-position: -231px -1040px;
+		background-repeat: no-repeat;
+		background-color: variables.$beige;
+		border-radius: 32px;
+		transition: all .2s ease;
+
+		@include mixins.MQ(S){
+			top: 30px;
+			right: 30px;
+		}			
+
+		&:hover{
+			background-color: variables.$beige-3;
+		}
+
+		svg{
+			display: none;
+		}
+	}	
+
+}
+
+.contact-form-holder{
+	margin-top: 60px;
+	margin-bottom: 90px;
+}
+
+.hbspt-form form{
+	.hs_people_eindtijd_project{
+		padding-top: 0;
+
+		@include mixins.MQ(M){
+			padding-top: 16px;
+		}
+	}
+}
+
+#contact-form-wrapper,
+#contact-form-wrapper-toptalent,
+.uk-modal.modal-contact{
+
+	.screen-contact-form,
+	.screen-booking-form{
+		display: none;
+	}
+
+	.screen-intro{
+		display: block;
+	}
+
+	&.screen-booking-form-visible{
+
+		.screen-intro,
+		.screen-contact-form{
+			display: none;
+		}
+
+		.screen-booking-form{
+			display: block;
+		}
+
+	}
+
+	&.screen-contact-form-visible{
+
+		.screen-contact-form{
+			display: block;
+		}
+
+		.screen-intro,
+		.screen-booking-form{
+			display: none;
+		}
+	}	
+
+	@include mixins.MQ(M){
+
+		.hbspt-form{
+			position: relative;
+
+			form{
+				width: 100%;
+				padding-right: 50%;
+				padding-right: calc(50% + 15px);
+
+				.hs_wanneer_contacteren ,
+				.hs_contact_uw_bericht {
+					position: absolute;
+					right: 0;
+					top: 5px;
+					width: 50%;
+					width: calc(50% - 15px);
+				}
+
+				.hs_contact_form_interesse_opties {
+					position: absolute;
+					right: 0;
+					top: 140px;
+					width: 50%;
+					width: calc(50% - 15px);
+				}
+			
+				.hs_people_opmerkingen {
+					position: absolute;
+					right: 0;
+					top: 90px;
+					width: 50%;
+					width: calc(50% - 15px);
+				}
+
+			}
+
+		} 
+
+	}	
+
+	.back-arrow{
+		display: block;
+		width: 32px;
+		height: 32px;
+		top: 33px;
+		left: 39px;
+		background-image: url(../images/sprite.svg);
+		background-position: -697px -1041px;
+		background-repeat: no-repeat;
+		position: absolute;
+		border-radius: 32px;
+		transition: all .2s ease;
+
+		&:hover{
+			background-color: variables.$beige-3;
+		}
+
+	}
+
+	.hs_submit {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include mixins.MQ(M){
+			height: 60px;
+		}
+	}
+
+	@include mixins.MQ(M){
+
+		.block-tekst-header{
+			max-width: 100%;
+		}
+
+		.hs-form-booleancheckbox{
+			margin-top: 20px;
+		}
+
+		.hs_submit {
+			position: absolute;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			bottom: 0;
+			left: 0;
+			height: 60px;
+		}
+
+		form{
+			padding-bottom: 60px;
+		}
+
+	}
+
+	a{
+		color: variables.$blue;
+
+		&:hover{
+			color: variables.$blue;
+		}
+	}
+
+	.hs_contact_form_interesse_opties{
+		margin-top: 30px;
+
+		ul.inputs-list {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			margin-bottom: 15px;
+
+			li{
+				margin: 12px 12px 0 0;				
+			}
+
+			label{
+				font-size: 12px;
+				color: variables.$blue;
+				padding: 0;
+			}
+
+			input[type="checkbox"] + span {  
+				padding: 8px 16px;
+				border-radius: 0.6rem;
+				background: variables.$beachsand;
+				margin: 0;
+				cursor: pointer;
+				display: inline-block;
+
+				&:before{
+					display: none;
+				}
+			
+			}
+
+			input[type="checkbox"] + span:hover{
+				background: variables.$blue;
+				color: white;			
+			}
+
+			input[type="checkbox"]:checked + span { 
+				background: variables.$blue;
+				color: white;
+			}
+
+		}
+
+	}
+
+	.block-tekst-header{
+
+		max-width: 600px;
+		margin: 0 auto 60px auto;
+
+		@include mixins.MQ(M){
+			max-width: 100%;
+		}
+
+		h2{
+			font-family: variables.$moskau;
+			font-size: 4em;
+			line-height: 1.2;
+			letter-spacing: 0px;
+			text-align: center;
+			color: variables.$dark;
+			margin-bottom: 30px;
+		}
+
+	}
+
+	.hbspt-form .submitted-message,
+	.block-tekst-header{
+
+		p{
+			font-family: variables.$dm;
+			font-size: 1.8em;
+			font-weight: 500;
+			line-height: 1.5;
+			letter-spacing: -0.10000000149011612px;
+			text-align: center;
+			color: variables.$dark;
+
+			a{
+				font-weight: 400;
+				color: variables.$blue;
+			}
+
+		}
+
+	}
+
+	.hbspt-form .submitted-message p{
+		font-weight: 400;
+		font-size: 1.6em;
+	}
+
+	.contact-box-wrapper{
+		margin-top: 60px;
+	}
+
+	.contact-box-holder{
+
+		display: block;
+		padding-top: 90px;
+
+		@include mixins.MQ(M){
+			padding-top: 30px;
+			height: 100%;
+		}
+
+		&:hover{
+			text-decoration: none;
+
+			span.blue-button{
+				background-color: variables.$dark;
+				border-color: variables.$dark;
+			}
+		}
+
+	}
+
+	.contact-box {
+		height: 100%;
+		border-radius: 8px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		@include mixins.MQ(M){
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.contact-box-title{
+			margin: 0 0 15px 0;
+			padding: 0;
+			font-family: variables.$moskau-md;
+			font-size: 2.6em;
+			line-height: 1.2;
+			letter-spacing: 0px;
+			text-align: center;
+			color: variables.$dark;
+
+			@include mixins.MQ(M){
+				text-align: left;
+			}
+		}
+
+		p{
+			margin: 0 0 24px 0;
+			padding: 0;
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			font-weight: 400;
+			line-height: 1.4;
+			letter-spacing: -0.10000000149011612px;
+			text-align: center;
+			color: variables.$dark;
+
+			@include mixins.MQ(M){
+				text-align: left;
+			}
+		}
+
+		&:after{
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			top: -60px;
+			width: 100%;
+			height: 120px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: auto 100%;
+
+			@include mixins.MQ(M){
+				top: 0;
+				left: -60px;
+				width: 120px;
+				height: 100%;
+				background-size: 100% auto;
+			}
+
+		}
+
+		&.contact-box-boek{
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), #16CC94;
+			padding: 75px 15px 30px 15px;
+
+			&:after{
+				background-image: url(../images/footer/contact-box-1.png);
+			}
+
+			transition: all .2s ease;
+			cursor: pointer;
+
+			@include mixins.MQ(M){
+				margin-right: 10px;
+				padding-left: 75px;
+				padding-top: 30px;
+			}				
+
+			&:hover{
+				background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), #16CC94;
+			}
+
+		}
+
+		&.contact-box-freelance{
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(0deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.20) 100%), #00C2FF;
+			padding: 90px 15px 30px 15px;
+			transition: all .2s ease;
+			cursor: pointer;
+
+			@include mixins.MQ(M){
+				margin-right: 10px;
+				padding-right: 75px;
+				margin-right: 0;
+				padding-left: 45px;
+				margin-left: 10px;
+				padding-left: 45px;
+				padding-top: 30px;
+			}
+
+			&:after{
+				background-image: url(../images/footer/contact-box-2.png);
+
+				@include mixins.MQ(M){
+					left: auto;
+					right: -60px;
+				}
+			}
+
+			&:hover{
+				background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(0deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.20) 100%), #00C2FF;
+			}
+
+		}
+
+	}
+
+}
+
+
+#contact-form-wrapper-toptalent{
+
+	.back-arrow{
+		top: 6px;
+		left: 0;
+	}
+
+}

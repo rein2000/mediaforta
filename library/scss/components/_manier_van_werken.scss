@@ -1,0 +1,130 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-manier-van-werken{
+	h3{
+		color: variables.$dark;
+		font-family: variables.$moskau;
+		font-size: 3.2em;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 3.84rem */
+		margin: 10px 0 9px 0;
+		padding: 0;
+		text-align: center;
+
+		@include mixins.MQ(S){
+			text-align: left;	
+		}		
+	}
+
+	ul.case-tags{
+		padding: 0;
+	}
+
+	p{
+		color: variables.$dark;
+		font-family: variables.$dm;
+		font-size: 1.8em;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 2.52rem */
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		@include mixins.MQ(S){
+			text-align: left;	
+			hyphens: none;
+		}	
+
+		&.small-text{
+			font-family: variables.$dm;
+			font-weight: 400;
+			font-size: 1.4em;
+			line-height: 19.6px;
+		}
+	}
+
+	.step{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 42px;
+
+		@include mixins.MQ(S){
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+	}
+
+	.number{
+		display: block;
+		width: 56px;
+		height: 56px;
+		background-color: variables.$beige;
+		line-height: 56px;
+		text-align: center;
+		font-family: variables.$moskau-md;
+		font-size: 2.2em;
+		color: variables.$dark;
+		letter-spacing: 0px;
+		margin-right: 24px;
+		border-radius: 100%;
+	}
+
+	.pic-holder{
+		text-align: center;
+
+		img{
+			margin-bottom: 120px;
+
+			@include mixins.MQ(M){
+				margin-bottom: 60px;
+			}
+
+		}
+	}
+
+	.deco-1{
+		width: 298px;
+		height: auto;
+	}
+
+	.deco-2{
+		width: 158px;
+		height: auto;
+		margin-top: 24px;
+		margin-left: 120px;
+
+		@include mixins.MQ(M){
+			margin-left: 240px;
+		}
+
+	}
+
+	.deco-3{
+		width: 352px;
+		height: auto;
+	}
+
+	.deco-4{
+		width: 185px;
+		height: auto;
+		margin-left: 120px;
+		margin-top: -50px;
+
+		@include mixins.MQ(M){
+			margin-left: 180px;
+			margin-top: -75px;
+		}
+
+	}
+
+	.deco-5{
+		width: 322px;
+		height: auto;
+	}
+}

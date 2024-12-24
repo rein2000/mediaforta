@@ -1,0 +1,112 @@
+@use "../partials/mixins";
+
+.block-tekst-kolom {
+
+	.tekst-kolom{
+		width: 100%;
+	}
+	
+}
+
+.aantal-kolommen-2 {
+	.tekstblok-kolom-item .tekstblok {
+		max-width: 100%;	
+	}
+
+	.tekstblok-kolom-item.uk-grid-margin {
+		margin-top: 45px;
+	}	
+
+	.tekstblok-kolom-item {
+		h2 {
+			margin-top: 0;
+		}	
+	}
+
+}
+
+.tekstblok-kolom-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	.tekstblok {
+		padding-bottom: 30px;
+		flex-basis: 100%;
+		width: 100%;
+		max-width: 420px;
+
+		p{
+			flex-grow: 1;
+		}
+		p.link{
+			flex-grow: 0;
+		}
+	}
+
+	// img{
+	// 	width: 125px;
+	// 	height: auto;
+	// }
+
+	h2 {
+		margin: 30px 0 15px 0;
+		padding: 0;
+	}
+
+	p{
+		width: 100%;
+		text-align: left;
+	}
+
+	p.link{
+		margin-top: 15px;
+	}
+
+	h2,
+	p{
+		text-align: left;
+
+		@include mixins.MQ(S){
+			text-align: left;
+		}
+	}
+
+}
+
+.mobile-version{
+
+	.tekstblok-kolom-item {
+
+		h2,
+		p{
+			text-align: center;
+		}
+
+	}
+
+	.block-tekst-header-holder:first-child{
+			
+		.running-tekst{
+
+			h1.title{
+				font-size: 3.8em;
+
+				@include mixins.MQ(S){
+					font-size: 3.8em;
+				}
+			}
+		}
+
+	}
+
+} 
+
+
+.single .tekstblok-kolom-item {
+
+	h2 {
+		text-align: left;
+	}
+
+}

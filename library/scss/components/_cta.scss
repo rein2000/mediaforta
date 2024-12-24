@@ -1,0 +1,163 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-cta-holder {
+	padding: 60px 0;
+
+	@include mixins.MQ(S){
+		padding: 90px 0;
+	}
+
+	&.bg-slate{
+		.block-cta h1{
+			color: white;
+		}
+	}
+}
+
+.block-cta-2{
+
+	.wrap{
+	
+		max-width: 1040px;	
+
+		.running-tekst-holder{
+			padding: 0 20px 30px 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.running-tekst{
+				padding-bottom: 30px;
+			}
+
+			@include mixins.MQ(S){
+				padding: 0 20px;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;	
+
+				.running-tekst{
+					padding-bottom: 0;
+					padding-right: 60px;
+				}				
+			}
+		}	
+	}
+
+	h1,
+	p{
+		text-align: center;
+
+		@include mixins.MQ(S){
+			text-align: left;		
+		}
+	}
+
+	h1{
+		color: variables.$meadow;
+		margin-bottom: 18px;
+		hyphens: none;
+		max-width: 100%;
+	}
+
+	p{
+		color: white;
+		font-size: 1.8em;
+	}
+
+}
+
+.bg-slate .block-cta{
+	p{
+		color: white;		
+	}
+}
+
+.block-cta{
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+
+	h2{
+		margin-bottom: 30px;
+		@include variables.Subtitel;
+		&{
+			text-align: center;
+			max-width: 720px;		
+		}
+	}
+
+	p{
+		font-size: 1.8em;
+		line-height: 140%;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	p{
+		max-width: 540px;		
+	}
+
+}
+
+.cta-holder{
+	padding-top: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@include mixins.MQ(480px){
+		flex-direction: row;
+	}
+
+	a{
+		margin: 0 20px 18px 20px;
+
+		@include mixins.MQ(480px){
+			margin: 0 20px;
+		}
+
+	}
+
+	.header-cta-button:last-child a{
+		margin-bottom: 0;
+	}
+}
+
+.cta_article{
+	margin: 0 auto;
+	max-width: 320px;
+	padding: 30px;
+	position: relative;
+	
+	img{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+
+	.tekster{
+		position: relative;
+		z-index: 1;
+	}
+
+	p{
+		color: white;
+	}
+
+	.white-button{
+		margin-top: 24px;
+	}
+}
+
+.second-cta .cta_article{
+	margin-top: 240px;
+}

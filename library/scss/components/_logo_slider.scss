@@ -1,0 +1,90 @@
+@use "../partials/mixins";
+
+.block-logo-slider{
+	background-color: #f9f8f5;
+	padding: 60px 0;
+
+	.wrap{
+		mix-blend-mode: multiply;
+		padding: 0 36px;	
+	}
+
+	.uk-slider-items {
+
+		width: 100%;
+
+		li{
+			width: 50%;
+
+			@include mixins.MQ(480px){
+				width: 33.33%;
+			}
+
+			@include mixins.MQ(S){
+				width: 25%;
+			}
+
+			@include mixins.MQ(M){
+				width: 20%;
+			}			
+
+			@include mixins.MQ(L){
+				width: 16.6666%;
+			}		
+		}
+
+	}
+
+}
+
+.logo-slider{
+	position: relative;
+
+	li {
+		text-align: center;
+		padding: 0;
+
+		@include mixins.MQ(S){
+			padding: 0 45px;
+		}
+
+		img{
+			margin: 0 auto;
+			max-width: 80%;
+
+			@include mixins.MQ(L){
+				max-width: 90%;
+			}
+
+		}
+	} 
+
+}
+
+.slider-nav {
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 18px;
+	height: 30px;
+	margin-top: -15px;
+	background-image: url(../images/sprite.svg);
+}
+
+.slider-nav-prev{
+	left: 0;
+	background-position: -148px -24px;
+
+	&:hover{
+		background-position: -177px -24px;		
+	}
+}
+
+.slider-nav-next{
+	right: 0;
+	background-position: -235px -24px;
+
+	&:hover{
+		background-position: -206px -24px;		
+	}
+}

@@ -1,0 +1,641 @@
+@use "../partials/variables";
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of buttons.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+
+******************************************************************/
+
+/*********************
+BUTTON DEFAULTS
+We're gonna use a placeholder selector here
+so we can use common styles. We then use this
+to load up the defaults in all our buttons.
+
+Here's a quick video to show how it works:
+http://www.youtube.com/watch?v=hwdVpKiJzac
+
+*********************/
+
+%btn {
+  display: inline-block;
+  position: relative;
+  // min-height: 40px;
+  border-radius: 20px;
+  border: 2px solid variables.$spring;
+  color: variables.$dark;
+  font-weight: normal;
+  padding: 10px 36px 8px 21px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: variables.$moskau-md;
+  font-stretch: normal;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 1.8em;
+  line-height: 20px;
+  background-color: variables.$spring;
+
+  // blue arrow
+  &:before{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 15px;
+    background-image: url(../images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+
+  // white arrow
+  &:after{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 15px;
+    background-image: url(../images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: -20px 0;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  &.no-arrow {
+
+    padding: 10px 21px 10px 21px;
+
+    &:before,
+    &:after{
+      display: none;
+    }
+
+  }
+
+  &.back-button {
+
+    padding: 10px 21px 10px 36px;
+
+    // blue arrow
+    &:before{
+      right: auto;
+      left: 15px;
+      background-position: -270px 0;
+    }
+
+    // white arrow
+    &:after{
+      right: auto;
+      left: 15px;
+      background-position: -270px 0;
+    }
+
+  }
+
+  &.plus-button {
+
+    padding-right: 40px;
+
+    // blue arrow
+    &:before{
+      background-position: -372px -689px;
+      margin-top: -6px;
+      right: 15px;
+    }
+
+    // white arrow
+    &:after{
+      background-position: -372px -689px;
+      margin-top: -6px;
+      right: 15px;
+    }
+
+  }    
+
+  &.download-button {
+
+    padding-right: 40px;
+
+    // blue arrow
+    &:before{
+      background-position: -11px -692px;
+      margin-top: -8px;
+      right: 15px;
+    }
+
+    // white arrow
+    &:after{
+      background-position: -38px -692px;
+      margin-top: -8px;
+      right: 15px;
+    }
+
+  }    
+
+  // hovering on the btn
+  &:hover, 
+  &:focus {
+    color: variables.$white;
+    text-decoration: none;
+    outline: none;
+    border-color: variables.$dark;
+    background-color: variables.$dark;
+
+    // clicking on the button
+    &:visited {
+      color: variables.$white;
+    } // end active  
+
+    &:after{
+      opacity: 1;
+    }
+
+    &:before{
+      opacity: 0;
+    }
+
+  } // end hover
+
+  // clicking on the button
+  &:active {
+    top: 1px; // adds a tiny hop to the click
+  }
+
+  &,
+  &:active,
+  &:visited {
+    color: variables.$white;
+  } 
+
+
+} // end .button
+
+// form input[type=submit] {
+  
+//   padding-right: 36px;
+
+//   &:after,
+//   &:before{
+//     display: none;
+//   }
+
+//   background-position: right center;
+//   background-position: calc(100% - 16px) center;
+//   background-image: url(../images/arrow-dark-blue.svg);
+//   background-repeat: no-repeat;
+
+//   &:hover{
+//     background-image: url(../images/arrow-white.svg);
+//   }
+// }
+
+.red-button {
+  @extend %btn; // here we load the btn defaults
+  background-color: variables.$crimson;
+  border-color: variables.$crimson;
+
+  &,
+  &:active,
+  &:visited {
+    color: white;
+  } 
+
+  &:after{
+    opacity: 1;
+  }
+
+  &:before{
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+  } // end hover
+
+}
+
+.mm-spn .contact-mobile a.button,
+.blue-button {
+  @extend %btn; // here we load the btn defaults
+  background-color: variables.$dodger;
+  border-color: variables.$dodger;
+
+  &,
+  &:active,
+  &:visited {
+    color: white;
+  } 
+
+  &:after{
+    opacity: 1;
+  }
+
+  &:before{
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: variables.$dark;
+    border-color: variables.$dark;
+  } // end hover
+
+}
+
+.page-header.video-header .transparent-button{
+  color: white;
+
+  &:before{
+    background-position: -20px 0;
+  }
+}
+
+.page-template-page-stage .block-cta-holder a.button,
+a.white-button,
+.white-button {
+  @extend %btn; // here we load the btn defaults
+  background-color: variables.$white;
+  border-color: variables.$white;
+
+  &,
+  &:active,
+  &:visited {
+    color: variables.$dark;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$blue;
+      border-color: variables.$blue;
+      color: variables.$white;
+    } // end hover
+
+  } 
+
+  &:after{
+    opacity: 0;
+    background-position: -20px 0;
+  }
+
+  &:before{
+    opacity: 1;
+    background-position: -100px 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: variables.$crimson;
+    border-color: variables.$crimson;
+    color: variables.$white;
+  } // end hover  
+
+  &.blue-text{
+
+    &,
+    &:active,
+    &:visited {
+      color: variables.$dodger;
+
+      &:hover,
+      &:focus {
+        color: variables.$dodger;
+      }
+    } 
+
+    &:after{
+      opacity: 1;
+      background-position: -80px 0;
+    }
+
+  }
+
+} 
+
+.grey-button {
+  @extend %btn; // here we load the btn defaults
+  background-color: variables.$iron;
+  border-color: variables.$iron;
+  color: #FFF;
+  font-family: variables.$moskau-md;
+  font-size: 1.6em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 1.6rem */
+  padding-top: 13px;
+  padding-bottom: 11px;
+
+
+  &,
+  &:active,
+  &:visited {
+    color: variables.$dark;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$mist;
+      border-color: variables.$mist;
+      color: variables.$dark;
+    } // end hover
+
+  } 
+
+  &:after{
+    opacity: 1;
+    background-position: -100px 0;
+  }
+
+  &:before{
+    opacity: 0;
+  }
+
+} 
+
+.form-holder {
+  position: relative;
+
+  .grey-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+}
+
+.hbspt-form form input[type=submit],
+.header-newsletter-form .hbspt-form form input[type=submit],
+.blue-button {
+  @extend %btn; // here we load the btn defaults
+  background-color: variables.$dodger;
+  border-color: variables.$dodger;
+  position: relative;
+
+  &,
+  &:active,
+  &:visited {
+    color: white;
+  } 
+
+  &:after{
+    opacity: 1;
+  }
+
+  &:before{
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: white;
+  } // end hover
+
+
+} // end blue button
+
+
+.hbspt-form form{
+  position: relative;
+  padding-bottom: 60px;
+
+  input[type=submit]{
+    background-image: url(../images/arrow-white.svg);
+    background-repeat: no-repeat;
+    background-position: 87% center;
+    color: #FFF;
+    font-family: variables.$moskau-md;
+    font-size: 1.6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 1.6rem */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 13px;
+    padding-bottom: 11px;
+
+    &:focus{
+      top: auto;
+    }
+  }
+
+} 
+
+
+li.uk-active a.transparent-button{
+
+  &,
+  &:active,
+  &:visited {
+    border-color: variables.$dodger;
+    color: white;
+    background-color: variables.$dodger;  
+  }
+
+}
+
+a.transparent-button,
+.transparent-button{
+
+  @extend %btn; // here we load the btn defaults
+  background-color: transparent;
+  border-color: transparent;
+
+  &,
+  &:active,
+  &:visited {
+    color: variables.$dark;
+    // border-color: $dark;
+
+    &:hover,
+    &:focus {
+      border-color: variables.$dark;
+      color: white;
+      background-color: variables.$dark;
+    } // end hover
+
+  } 
+
+  &:before{
+    background-position: -100px 0;
+  }
+
+  &.red-text-button{
+
+    border-color: variables.$crimson;
+
+    &,
+    &:active,
+    &:visited {
+      color: variables.$crimson;
+
+      &:hover,
+      &:focus {
+        color: white;
+        background-color: variables.$crimson;
+        border-color: variables.$crimson;
+      } // end hover
+    } 
+
+    &:before{
+      background-position: -60px 0;
+    }
+
+  }
+
+  &.blue-text-button{
+
+    border-color: variables.$dodger;
+
+    &,
+    &:active,
+    &:visited {
+      color: variables.$dodger;
+    
+      &:hover,
+      &:focus {
+        color: white;
+        background-color: variables.$dodger;
+        border-color: variables.$dodger;
+      } // end hover
+
+    } 
+
+    &:before{
+      background-position: -80px 0;
+    }
+
+  }  
+
+  &.dark-text-button{
+
+    border-color: variables.$spring;
+
+    &,
+    &:active,
+    &:visited {
+      color: variables.$dark;
+    
+      &:hover,
+      &:focus {
+        color: variables.$dark;
+        background-color: variables.$spring;
+        border-color: variables.$spring;
+      } // end hover
+
+    } 
+
+    &:after,
+    &:before{
+      background-position: -100px 0;
+    }
+
+  }  
+
+  &.white-text-button{
+
+    border-color: variables.$white;
+
+    &,
+    &:active,
+    &:visited {
+      color: variables.$white;
+    
+      &:hover,
+      &:focus {
+        color: variables.$white;
+        background-color: variables.$crimson;
+        border-color: variables.$crimson;
+        // border-color: $white;
+      } // end hover
+
+    } 
+
+    &:after,
+    &:before{
+      background-position: -20px 0;
+    }
+
+  }  
+
+}
+
+span.with-arrow:hover{
+    color: variables.$crimson;
+
+    &:after{
+        background-position: -65px -4px;
+    }  
+}
+
+span.with-arrow,
+a.with-arrow,
+a.with-arrow:visited {
+  color: variables.$dodger;
+  text-align: left;
+  display: inline-block !important;
+
+  &:hover{
+    color: variables.$crimson;
+
+    &:after{
+        background-position: -65px -4px;
+    }
+  }
+
+  &:after{
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    background: red;
+    content: "";
+    margin-left: 6px;
+    position: relative;
+    top: 1px;
+    background-color: transparent;
+    background-position: -85px -4px;
+    background-image: url(../images/sprite.svg);
+  }
+}
+
+.newsletter-holder-active-marketing form button[type=submit],
+.page-template-page-selectie .blue-button,
+.page-template-page-contentteams .blue-button,
+form input[type=submit],
+.button {
+  @extend %btn; // here we load the btn defaults
+
+  &,
+  &:active,
+  &:visited {
+    color: variables.$dark;
+
+    &:hover,
+    &:focus{
+      color: white;
+    }
+  }
+
+  &.inline-button{
+    display: inline-block;
+    padding-right: 36px;
+  }
+
+} 

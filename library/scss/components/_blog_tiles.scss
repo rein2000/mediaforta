@@ -1,0 +1,291 @@
+@use "../partials/variables";
+
+%blue-header{
+	font-family: variables.$moskau-md;
+	font-size: 2.2em;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	color: variables.$dodger;
+	margin-bottom: 24px;
+}
+
+%featured-image {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 60%;
+}
+
+%article-details{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding: 16px 0 6px 0;
+	font-family: variables.$moskau-md;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	color: variables.$dodger;
+
+	span.sep{
+		padding: 0 6px;
+		font-size: 1.4em;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	span.date{
+		font-size: 1.4em;
+		font-weight: 400;
+		line-height: 24px;
+	}
+}
+
+%article-tile{
+	transition: all .2s ease-in-out;
+	padding-bottom: 9px;
+	margin-bottom: 0;
+	height: 100%;
+
+	a:hover{
+		text-decoration: none;
+	}
+
+	h3{
+		font-family: variables.$moskau-md;
+		font-size: 2em;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.3;
+		letter-spacing: normal;
+		color: variables.$dark;
+		margin: 16px 0 12px 0;
+		hyphens: auto;
+	}	
+
+	.article-tile-excerpt{
+		display: none;
+	}
+
+	.date{
+		font-family: variables.$moskau-md;
+		color: #A9A9B1;
+		font-size: 1.6em;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	.article-tile-excerpt p{
+		font-size: 1.6em;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.4;
+		letter-spacing: normal;
+		color: variables.$slate;
+		text-align: left;
+		margin-top: 0;
+
+		a{
+			color: variables.$slate;
+		}
+	}
+
+	.excerpt-read-more{
+		display: none;	
+	}
+
+	.article-tile-tekst,
+	.article-details{
+		transition: all .2s ease;
+		display: block;
+	}
+
+}
+
+header + .block-related-blogposts {
+	margin-top: 60px;
+}
+
+.block-related-blogposts {
+
+	&.loading{
+		min-height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.loading-message{
+			display: inline-block;
+		}
+
+		.tiles-grid{
+			display: none;
+		}
+	}
+
+	.loading-message{
+		display: none;
+	}
+
+	.featured-image {
+		@extend %featured-image;
+	}
+
+	h3{
+		@extend %blue-header;
+
+		span{
+			color: variables.$black;
+		}
+	}
+
+	.block {
+	    padding: 50px 0;
+	
+	    &.download-banner{
+		    padding: 15px 0;
+
+		    img{
+		    	width: 320px;
+		    	height: auto;
+		    }
+	    }
+	}
+
+	.article-tile{
+		@extend %article-tile;
+	}
+
+	.no-excerpt{
+
+		h3{
+			font-family: variables.$moskau-md;
+			font-size: 2em;
+			line-height: 1.3;
+			color: #272e45;
+			margin-bottom: 0;
+		}
+
+		.article-tile-excerpt{
+			display: none;
+		}
+		
+		.article-details{
+			padding: 8px 9px 2px 9px;
+		}
+		
+	}
+
+	.highlighted-articles{
+
+		h3.title{
+			font-family: variables.$moskau-md;
+			font-size: 2em;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1;
+			letter-spacing: normal;
+			color: variables.$dark;
+			margin: 12px 0;
+			font-weight: 400;
+			line-height: 130%;
+		}
+
+		.article-tile-excerpt{
+			display: none;
+		}
+
+		.article-tile{
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 16px;
+			padding-bottom: 0;
+			background-color: variables.$white;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			&:hover{
+				background-color: white;
+			}
+
+			.article-details{
+				order: 4;
+				padding: 0;
+			}
+
+			h3{
+				font-size: 2em;
+				margin-bottom: 0;
+			}
+
+			.post-categories,
+			.sep{
+				display: none;
+			}
+
+			.article-tile-tekst{
+				order: 1;
+				padding: 0;
+			}
+		}
+	}
+
+	.article-details{
+		@extend %article-details;
+	}
+
+}
+
+ul.post-categories{
+	font-size: 1.6em;
+	font-weight: 400;
+	line-height: 24px;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;	
+	flex-wrap: wrap;
+
+	li:after{
+		content: "-";
+		padding-left: 6px;
+		padding-right: 6px;
+	}		
+
+	li:last-child{
+		padding-right: 0;
+
+		&:after{
+			content: "";
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	a,
+	a:visited{
+		font-family: variables.$moskau-md;
+		font-stretch: normal;
+		font-style: normal;
+		letter-spacing: normal;
+		color: variables.$dodger;	
+		
+		&:hover{
+			color: variables.$crimson;
+		}			
+	}
+				
+}

@@ -1,0 +1,42 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-tekst-kolom.block-details .tekstblok-kolom-item h2{
+	margin-top: 0;	
+}
+
+.block-oplevering{
+
+	h1{
+		@include variables.Subtitel;
+		&{
+			margin-bottom: 45px;
+		}
+	}
+
+	.tekstblok-kolom-item{
+		padding: 30px;
+		background-color: #eff1f3;
+		height: 100%;
+
+		h2{
+			margin-top: 0;
+		}
+	}
+
+	.tekstblok-kolom-item-holder{
+
+		@include mixins.MQ(540px){
+			width: 50%;
+		}
+
+		@include mixins.MQ(S){
+			width: 33.33%;
+		}		
+
+	}
+
+
+
+
+}

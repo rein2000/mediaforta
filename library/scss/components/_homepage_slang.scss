@@ -1,0 +1,425 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.sticky-holder-holder {
+	width: 100%;
+
+	.uk-subnav {
+		margin-top: 0;
+
+		a{
+			text-transform: none;
+		}
+	}
+}
+
+.lang-fr .block-homepage-slang .uk-switcher > li:nth-child(2) .slang{
+
+	background-image: 
+		url(../images/slang/slang1.svg),
+		url(../images/slang/productie/deco1.png),
+		url(../images/slang/productie/deco2.png),
+		url(../images/slang/productie/deco3-fr.png),
+		url(../images/slang/productie/deco4.png);
+}
+
+.lang-en .block-homepage-slang .uk-switcher > li:nth-child(2) .slang{
+
+	background-image: 
+		url(../images/slang/slang1.svg),
+		url(../images/slang/productie/deco1.png),
+		url(../images/slang/productie/deco2.png),
+		url(../images/slang/productie/deco3-en.png),
+		url(../images/slang/productie/deco4.png);
+}
+
+.block-homepage-slang {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1{
+		@include variables.Subtitel;
+	}
+
+	.block-homepage-slang-header{
+
+		p{
+			font-family: variables.$moskau;
+			font-size: 1.6em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.3;
+			letter-spacing: normal;
+			text-align: center;
+			color: variables.$bayoux;
+			max-width: 600px;
+		}
+
+	}
+
+	.slang{
+		background-position: center 16px;
+		background-repeat: no-repeat;
+		margin: 30px 0 0 0;
+		position: relative;
+		background-image: url(../images/slang/slang1.svg);
+	}
+
+	.uk-switcher > li:nth-child(1) .slang{
+		height: 1848px;
+
+		background-image: 
+			url(../images/slang/slang1.svg),
+			url(../images/slang/strategie/deco1.png),
+			url(../images/slang/strategie/deco2.png),
+			url(../images/slang/strategie/deco3.png),
+			url(../images/slang/strategie/deco4.png),
+			url(../images/slang/strategie/deco5.png);
+		background-position: 
+			center 16px,
+			right 200px,
+			left 451px,
+			calc(50% + 260px) 800px,
+			left 1080px,
+			right 1370px;
+		background-size: 
+			auto 1882px,
+			320px auto,
+			320px auto,
+			270px auto,
+			320px auto,
+			300px auto;	
+
+		@include mixins.MQ(M){
+			background-size: 
+				auto 1882px,
+				528px auto,
+				536px auto,
+				327px auto,
+				535px auto,
+				535px auto;				
+		}
+	}
+
+	.uk-switcher > li:nth-child(2) .slang{
+			height: 1848px;
+
+			background-image: 
+				url(../images/slang/slang1.svg),
+				url(../images/slang/productie/deco1.png),
+				url(../images/slang/productie/deco2.png),
+				url(../images/slang/productie/deco3.png),
+				url(../images/slang/productie/deco4.png);
+			background-position: 
+				center 16px,
+				right 90px,
+				118px 468px,
+				right 731px,
+				118px 1020px;
+			background-size: 
+				auto 1882px,
+				320px auto,
+				320px auto,
+				270px auto,
+				320px auto;	
+
+			@include mixins.MQ(M){
+				background-size: 
+					auto 1882px,
+					594px auto,
+					412px auto,
+					425px auto,
+					400px auto;		
+			}
+
+			.slang-item{
+				&:nth-child(2){
+					top: 212px;
+
+					@include mixins.MQ(M){
+						padding-right: 135px;
+					}
+				}
+
+				&:nth-child(3){
+					top: 537px;
+
+					@include mixins.MQ(M){
+						padding-right: 135px;
+					}
+				}
+
+				&:nth-child(4){
+					top: 832px;
+				}
+
+				&:nth-child(5){
+					top: 1203px;
+				}
+			}		
+	}
+
+	.uk-switcher > li:nth-child(3) .slang{
+			height: 1848px;
+
+			background-image: 
+				url(../images/slang/slang1.svg),
+				url(../images/slang/distributie/deco1.png),
+				url(../images/slang/distributie/deco2.png),
+				url(../images/slang/distributie/deco3.png),
+				url(../images/slang/distributie/deco4.png);
+			background-position: 
+				center 16px,
+				calc(50% + 310px) 180px,
+				calc(50% + 310px) 772px,
+				60px 1070px,
+				calc(50% + 310px) 1400px;
+			background-size: 
+					auto 1882px,
+				320px auto,
+				320px auto,
+				270px auto,
+				320px auto;	
+
+			@include mixins.MQ(M){
+				background-size: 
+					auto 1882px,
+					410px auto,
+					514px auto,
+					546px auto,
+					507px auto;		
+			}		
+	}	
+
+	.slang{
+
+		.slang-item{
+
+			position: absolute;
+			width: 50%;
+
+			&:nth-child(odd){
+				left: 50%;
+				padding: 15px 21px 15px 30px;
+
+				@include mixins.MQ(M){
+					padding: 15px 90px 15px 120px;
+				}
+			}
+
+			&:nth-child(even){
+				left: 0;
+				padding: 15px 105px 15px 21px;
+
+				@include mixins.MQ(M){
+					padding: 15px 90px 15px 120px;
+				}
+			}
+
+			&:nth-child(1){
+				top: -1px;
+
+				@include mixins.MQ(M){
+					padding: 15px 120px 15px 90px;
+				}
+			}
+
+			&:nth-child(2){
+				top: 270px;
+
+				@include mixins.MQ(M){
+					padding-right: 150px;
+				}
+			}
+
+			&:nth-child(3){
+				top: 585px;
+				padding-left: 135px;
+
+				@include mixins.MQ(M){
+					padding: 15px 90px 15px 120px;
+				}
+
+			}
+
+			&:nth-child(4){
+				top: 852px;
+
+				@include mixins.MQ(M){
+					padding-right: 150px;
+				}
+			}
+
+			&:nth-child(5){
+				top: 1140px;
+
+				padding-left: 135px;
+
+				@include mixins.MQ(M){
+					padding-left: 150px;
+				}
+			}
+
+			&:nth-child(6){
+				top: 1440px;
+
+				@include mixins.MQ(M){
+					padding-right: 140px;
+				}
+			}
+
+		}
+
+		section{
+
+			text-align: left;
+			width: 50%;
+
+			h2{
+				margin-bottom: 12px;
+			}
+
+			p{
+				margin: 0 0 1em 0;
+			}
+
+			p{
+				text-align: left;
+				max-width: 100%;
+			}
+
+		}
+	}
+
+	.case-overview {
+		padding: 115px 0 30px 0;
+		margin-top: 43px;
+		background-image: url(../images/slang/puntjes-2.svg);
+		background-position: center top;
+		background-repeat: no-repeat;
+	}	
+
+}
+
+.block-related-cases .case-overview .image-holder{
+	padding-bottom: 66.66%;
+}
+
+.case-overview {
+
+	padding: 0;
+
+	h2.case-overview-header {
+		margin-bottom: 30px;
+	}
+
+	.image-holder{
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+		padding-bottom: 100%;
+	}
+
+	a{
+
+		.overview-item {
+			transition: all .2s ease;	
+			flex-grow: 1;
+
+			.subtitle{
+				color: variables.$blue;
+				font-family: variables.$moskau-md;
+				font-size: 1.8em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 100%; /* 18px */
+				margin: 16px 0 8px 0;
+				padding: 0;
+			}
+
+			h3{
+				color: var(--mf-royal-blue-dark, #17285D);
+				font-family: variables.$moskau-md;
+				font-size: 2.6em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 120%; /* 3.12rem */
+				letter-spacing: -0.05rem;
+				margin: 0;
+				padding: 0;
+			}
+
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		.link{
+			color: variables.$dodger;
+			display: inline-block;
+			margin-bottom: 0;
+			position: relative;
+		}
+
+	}
+}
+
+#sticky_padding{
+	width: 100%;
+	height: 80px;
+	background-image: url(../images/slang/slang1.svg);
+	background-position: center -1832px;
+	background-size: auto 1882px;
+	background-repeat: no-repeat;
+}
+
+.slang-puntjes{
+	padding: 75px 0 0 0;
+	background-image: url(../images/slang/puntjes-3.svg);
+	background-position: center top;
+	background-repeat: no-repeat;	
+}
+
+.homepage-form {
+	padding: 30px 0 0 0;
+
+	h1{
+		margin-bottom: 30px;
+	}
+
+	.step{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 15px;
+
+		&.first{
+			margin-top: 30px;
+		}
+
+		.number{
+			@include variables.Body-medium;
+			background-color: variables.$spring;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			margin-right: 12px;
+			border-radius: 15px;
+		}
+
+		p{
+			@include variables.Body-medium;
+			margin-bottom: 0;
+		}
+	}
+}

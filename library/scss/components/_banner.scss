@@ -1,0 +1,154 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+#banner{
+	display: none;
+}
+
+body.has-banner:not(.page-template-page-sea-php){
+
+	#banner{
+		height: 100px;
+		background: linear-gradient(90deg, rgba(80, 79, 255, 0.00) 0.01%, #504FFF 99.99%), #17285D;
+		position: relative;
+
+		display: none;
+
+		@include mixins.MQ(640px){
+			display: block;
+		}
+
+		.rightside{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 60%;
+			height: 100%;
+
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			@include mixins.MQ(2400px){
+				right: 400px;
+				right: calc(50vw - 800px - 240px);
+			}
+
+			.bg-img{
+				width: 240px;
+				height: 100px;
+				background-size: cover;
+				background-position: center center;
+				display: block;			
+
+				@include mixins.MQ(L){
+					width: 400px;
+				}
+
+				@include mixins.MQ(2400px){
+					width: 600px;
+				}
+
+			}
+
+			.white-button{
+				margin-right: 30px;		
+				padding-right: 50px;
+				color: variables.$blue;
+
+				&:hover{
+					background-color: variables.$green;
+					border-color: variables.$green;
+					color: variables.$blue;
+				}		
+
+				&:after,
+				&:before{
+					background-position: -937px -1312px;
+					width: 24px;
+					height: 24px;
+					margin-top: -12px;
+				}
+				
+				&:after{
+					background-position: -998px -1312px;
+					background-position: -937px -1312px;
+				}
+			}
+		}
+
+		#inner-banner{
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+			height: 100%;
+			padding-top: 0;
+			padding-bottom: 0;
+
+			.title,
+			.subtitle{
+				margin-left: 18px;
+
+				@include mixins.MQ(L){
+					margin-left: 62px;
+				}
+
+			}
+
+			.title{
+				color: #FFF;
+				font-feature-settings: 'clig' off, 'liga' off;
+				/* MF H4 Heading */
+				font-family: variables.$moskau-md;
+				font-size: 2.2em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 130%; /* 2.86rem */
+			}
+
+			.subtitle{
+				color: #FFF;
+				font-feature-settings: 'clig' off, 'liga' off;
+				font-family: variables.$moskau;
+				font-size: 1.8em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 140%; /* 2.52rem */
+			}			
+		}
+
+	}
+
+	.mm-ocd{
+	    top: 67px;
+
+	    @include mixins.MQ(640px){
+	        top: 165px;
+	    }  
+
+	    @include mixins.MQ(S){
+	        top: 193px;
+	    }      
+
+	}
+
+	#main{
+
+		@media (max-width: 1019px) {
+			padding-top: 192px;
+		}
+
+		@media (max-width: 720px) {
+			padding-top: 165px;
+		}
+
+		@media (max-width: 640px) {
+			padding-top: 65px;
+		}
+
+	}
+
+}

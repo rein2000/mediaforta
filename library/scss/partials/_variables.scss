@@ -1,0 +1,467 @@
+@use "mixins";
+
+@use "sass:color";
+
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$zodiac: #14325a;
+$bayoux: #4f6583;
+$cove: #6678b4;
+$ribbon: #0a3cf0;
+$crimson: #eb323c;
+$spring: #0df394;
+$aero: #cffdea;
+$jordy: #849df7;
+$hawkes: #ced8fc;
+$selago: #f8fafe;
+$white: #ffffff;
+$light-pink: #fdeaeb;
+$dark-royal-blue: #001e82;
+$darkblue: $dark-royal-blue;
+$resolution: #001e82;
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$beige:             #F0EDE5;
+$beige-1:           #F6F4EF;
+$beige-2:           #F0EDE5;
+$beige-3:           #DFDCD5;
+$beige-4:           #323944;
+
+$dark: #17285d;
+$ribbon: #0237ff;
+$dodger: #504fff;
+$spring: #0df394;
+$clay: #2a3148;
+$meadow: #16cc94;
+$silver: #bbbdbf;
+$mist: #bcc3ca;
+$iron: #dadce0;
+$crimson: #eb323c;
+$porcelain: #eff2f3;
+$white: #ffffff;
+$haze: #f6f8fa;
+$slate: #445669;
+$caribbean: #16CC94;
+$beachsand: $beige;
+
+$black:             #323944;
+$white:             #fff;
+
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+$text-color:        #5c6b80;
+$meta-gray:         #9fa6b4;
+
+$tan:               #eceee5;
+
+$green:             $spring;
+$red:               $crimson;
+
+$bones-pink:        #f01d4f;
+$blue:              $dodger;
+
+$link-color:        $bones-pink;
+$link-hover:        color.adjust($link-color, $lightness: -9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+
+
+@font-face {
+  font-family: 'MoskauGrotesk-Bold';
+  src: url('../fonts/webfonts/3AD1A3_0_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_0_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_0_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {
+  font-family: 'MoskauGrotesk-BoldItalic';
+  src: url('../fonts/webfonts/3AD1A3_1_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_1_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_1_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {
+  font-family: 'MoskauGrotesk-Medium';
+  src: url('../fonts/webfonts/3AD1A3_2_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_2_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_2_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_2_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {
+  font-family: 'MoskauGrotesk';
+  src: url('../fonts/webfonts/3AD1A3_3_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_3_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_3_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_3_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {
+  font-family: 'MoskauGrotesk-MediumItalic';
+  src: url('../fonts/webfonts/3AD1A3_4_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_4_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_4_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_4_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {
+  font-family: 'MoskauGrotesk-Italic';
+  src: url('../fonts/webfonts/3AD1A3_5_0.eot');
+  src: url('../fonts/webfonts/3AD1A3_5_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/3AD1A3_5_0.woff2') format('woff2'),
+    url('../fonts/webfonts/3AD1A3_5_0.woff') format('woff'),
+    url('../fonts/webfonts/3AD1A3_5_0.ttf') format('truetype');
+}
+
+
+.MoskauGrotesk { 
+  font-family: MoskauGrotesk;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MoskauGrotesk-Italic { 
+  font-family: MoskauGrotesk-Italic;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MoskauGrotesk-Medium { 
+  font-family: MoskauGrotesk-Medium;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MoskauGrotesk-MediumItalic { 
+  font-family: MoskauGrotesk-MediumItalic;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MoskauGrotesk-Bold { 
+  font-family: MoskauGrotesk-Bold;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MoskauGrotesk-BoldItalic { 
+  font-family: MoskauGrotesk-BoldItalic;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+// font stacks
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
+*/
+$moskau:                  'MoskauGrotesk', $sans-serif;
+$moskau-it:               'MoskauGrotesk-Italic', $sans-serif;
+$moskau-md:               'MoskauGrotesk-Medium', $sans-serif;
+$moskau-mdit:             'MoskauGrotesk-MediumItalic', $sans-serif;
+$moskau-bd:               'MoskauGrotesk-Bold', $sans-serif;
+$moskau-bdit:             'MoskauGrotesk-BoldItalic', $sans-serif;
+
+$dm:                      'DM Sans', $sans-serif;
+
+
+
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word; //non-standart css for webkit
+  word-wrap: break-word;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+  // sets a minimum number of characters before and after the break
+  -webkit-hyphenate-before: 2;
+   -webkit-hyphenate-after: 3;
+           hyphenate-lines: 3;
+  // enabling fancy ligatures when available
+  -webkit-font-feature-settings: "liga", "dlig";
+   -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+       -o-font-feature-settings: "liga", "dlig";
+          font-feature-settings: "liga", "dlig";
+}
+
+
+
+@mixin Koptitel {
+  color: $dark;
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.1;
+  font-size: 2.7em;
+  margin: 0 0 24px 0;
+  
+  @include mixins.MQ(480px){
+    font-size: 3.2em;
+  } 
+
+  @include mixins.MQ(M){
+    font-size: 4em;
+  }   
+
+  @include mixins.MQ(M){
+    font-size: 4.8em;
+  }    
+
+  @include mixins.MQ(L){
+    font-size: 5.8em;
+  }      
+}
+
+@mixin Subtitel {
+  font-family: $moskau;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.2em;
+  text-align: center;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: $dark;
+  hyphens: auto;
+
+  @include mixins.MQ(S){
+    font-size: 4em;
+    // text-align: center;
+    hyphens: none;
+  }    
+}
+
+@mixin Quote {
+  font-family: $moskau-mdit;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.1em;
+  line-height: 1.2;
+  color: $dark;
+
+  @include mixins.MQ(S){
+    font-size: 2.7em;
+  }
+
+  @include mixins.MQ(M){
+    font-size: 3.2em;
+  }  
+
+}
+
+@mixin Quote-2023 {
+  font-family: $moskau;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 1.4;
+  color: $dark;
+  font-family: MoskauGrotesk;
+  line-height: 140%;
+
+  b,strong{
+    font-family: $moskau-md;
+  }
+
+  @include mixins.MQ(M){
+    font-size: 2.2em;
+  }    
+
+}
+
+@mixin Subtitel-S {
+  font-family: $moskau-bd;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.1em;
+  line-height: 1.11;
+  text-align: left;
+  color: $ribbon;
+
+  @include mixins.MQ(S){
+    font-size: 2.8em;
+    text-align: center;
+  }  
+}
+
+@mixin Ondertitel-L {
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  color: $dark;
+  font-size: 2.2em;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  hyphens: auto;
+
+  @include mixins.MQ(S){
+    font-size: 2.4em;
+  }
+
+  @include mixins.MQ(M){
+    font-size: 2.6em;
+  }
+}
+
+@mixin Ondertitel {
+  font-family: $moskau-bd;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.27;
+  color: $dark-royal-blue;
+  margin-bottom: 9px;
+}
+
+@mixin Whitepaper-intro {
+  font-family: $moskau;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.2;
+  color: $dark-royal-blue;
+}
+
+@mixin Slang-navigatie {
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.4;
+  color: $ribbon;
+}
+
+@mixin Header-intro {
+  font-family: $dm;
+  font-weight: 400;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  hyphens: none;
+  letter-spacing: normal;
+  color: $dark;
+  font-size: 1.8em;
+}
+
+@mixin Quote-name {
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: $dodger;
+}
+
+@mixin Body-medium {
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1;
+  color: $dark-royal-blue;
+}
+
+@mixin Top-navigatie {
+  font-family: $moskau-md;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-align: center;
+  color: $dark;
+
+  @include mixins.MQ(M){
+    font-size: 12px;
+  }
+
+  @include mixins.MQ(1080px){
+    font-size: 13px;
+  }  
+
+  @include mixins.MQ(1240px){
+    font-size: 15px;
+  }  
+}
+
+body {
+  font-family: $moskau;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  font-stretch: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: $bayoux;
+}
+
+// Uikit overrides
+$global-link-color: $crimson;
+$base-em-color: $text-color;
+$inverse-global-color-mode: none;
+$base-list-padding-left: 0;
+$breakpoint-xsmall: 375px !default;
+$breakpoint-small: 720px !default;
+$breakpoint-medium: 1020px !default;
+$breakpoint-large: 1200px !default;
+$breakpoint-xlarge: 1420px !default;
+$base-margin-vertical: 0;
+$base-heading-color: $black;
+$modal-background: rgba(0,0,0,.75);
+$modal-body-padding-vertical: 16px; 
+$modal-body-padding-horizontal: 16px;
+$modal-padding-horizontal: 32px;
+$base-heading-font-family: $moskau;
+$grid-gutter-horizontal: 45px;
+$grid-gutter-horizontal-m: 45px;
+$grid-gutter-horizontal-l: 60px;
+$modal-padding-vertical-s: 150px;
+$modal-dialog-width: 480px;

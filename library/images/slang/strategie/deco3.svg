@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="359px" height="308px" viewBox="0 0 359 308" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 27</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01---Mediaforta-2019---Home-1" transform="translate(-842.000000, -2461.000000)">
+            <g id="Group-24" transform="translate(-7.000000, 1275.000000)">
+                <g id="Group-39">
+                    <g id="Group-33" transform="translate(0.000000, 397.000000)">
+                        <g id="Group-12" transform="translate(845.000000, 579.000000)">
+                            <g id="Group-27" transform="translate(18.000000, 210.000000)">
+                                <g id="Group-16">
+                                    <g id="Group-19" transform="translate(36.000000, 0.000000)" fill="#0DF394">
+                                        <circle id="Oval-Copy-10" cx="90" cy="90" r="90"></circle>
+                                    </g>
+                                    <g id="Group-17" transform="translate(202.500000, 90.000000)" fill="#FFFFFF" stroke="#504FFF" stroke-width="18">
+                                        <circle id="Oval-Copy-9" cx="61.875" cy="61.875" r="70.875"></circle>
+                                    </g>
+                                    <g id="Group-21" transform="translate(0.000000, 158.400000)" fill="#FFFFFF" stroke="#17285D" stroke-width="13.5">
+                                        <circle id="Oval" cx="67.5" cy="67.5" r="74.25"></circle>
+                                    </g>
+                                    <text id="3.500-MQ" font-family="Helvetica" font-size="39.6" font-weight="normal" fill="#17285D">
+                                        <tspan x="77.4516602" y="94">3.500</tspan>
+                                        <tspan x="176.54834" y="94" font-size="25.2"></tspan>
+                                        <tspan x="101.226562" y="141" font-size="32">MQ</tspan>
+                                    </text>
+                                    <text id="55-sales" font-family="Helvetica" font-size="54" font-weight="normal" line-spacing="25.38" fill="#17285D">
+                                        <tspan x="206.2" y="185.3">55</tspan>
+                                        <tspan x="317.601367" y="220.48543" font-size="25.2"></tspan>
+                                        <tspan x="234.197559" y="242.981562" font-size="25.2">sales</tspan>
+                                    </text>
+                                    <text id="510-SAL" font-family="Helvetica" font-size="54" font-weight="normal" line-spacing="32.4" letter-spacing="-1" fill="#17285D">
+                                        <tspan x="1" y="251.325">510</tspan>
+                                        <tspan x="139.433594" y="281.49043" font-size="25.2"></tspan>
+                                        <tspan x="35.2211914" y="308.399805" font-size="32">SAL</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

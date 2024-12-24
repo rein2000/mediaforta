@@ -1,0 +1,479 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.lang-nl.page-template-page-people-netwerk,
+.lang-nl.page-template-page-jobs {
+
+	.timing span.lang-nl{
+		display: block;
+	}
+
+}
+
+.lang-fr.page-template-page-people-netwerk,
+.lang-fr.page-template-page-jobs {
+
+	.timing span.lang-fr{
+		display: block;
+	}
+
+}
+
+.lang-en.page-template-page-people-netwerk,
+.lang-en.page-template-page-jobs{
+
+	.timing span.lang-en{
+		display: block;
+	}
+
+}
+
+.page-template-page-people-netwerk{
+
+		.white-block-with-icon{
+			border-radius: 0.6rem;
+			background: #FFF;
+			display: inline-block;
+			color: var(--mf-royal-blue-dark, #17285D);
+			font-family: variables.$dm;
+			font-size: 1.4em;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 100%; /* 1.4rem */
+			letter-spacing: 0.028rem;
+			min-height: 34px;
+			padding: 9px;
+			margin-bottom: 8px;
+			margin-right: 8px;
+
+			&.timing,
+			&.language,
+			&.location,
+			&.price{
+				padding-left: 33px;
+				position: relative;
+
+				&:before{
+					position: absolute;
+					top: 7px;
+					left: 7px;
+					width: 20px;
+					height: 20px;
+					background-image: url(../images/sprite.svg);
+					content: "";
+				}
+
+			}
+
+			&.language:before{
+				background-position: -146px -1394px;
+			}
+			&.location:before{
+				background-position: -105px -1394px;
+			}
+			&.timing:before{
+				background-position: -190px -1394px;
+			}					
+
+		}
+
+
+	.jobs-detail-header,
+	.page-header-holder{
+		background: linear-gradient(270deg, rgba(0, 255, 148, 0.35) 0%, rgba(0, 255, 148, 0.00) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.20) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), #00C2FF;
+	}
+
+	.jobs-kenmerk{
+		border-radius: 8px;
+		background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(0deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.20) 100%), #00C2FF;
+
+		.check-icon {
+			background-color: white;
+		}
+
+	}
+
+	.people-block-deel-uitmaken .jobs-kenmerk{
+		background: white;
+
+		.check-icon {
+			background-color: #A7EBEC;
+			color: variables.$dark;
+		}
+
+	}
+
+	.button-holder{
+		margin-top: 64px;
+	}
+
+	.people-block-bottom{
+		padding-bottom: 90px;
+		background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(0deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.20) 100%), #00C2FF;
+		padding-top: 0;
+		padding-left: 24px;
+		padding-right: 24px;
+	
+		@include mixins.MQ(M){
+			padding-bottom: 240px;
+			padding-left: 36px;
+			padding-right: 36px;
+		}
+	
+		@include mixins.MQ(XL){
+			padding-left: 0;
+			padding-right: 0;			
+		}
+
+		.wrap{
+			background-color: white;
+			max-width: 1265px;
+			border-radius: 8px 8px 0px 0px;
+			padding: 32px 24px;
+		}
+	}
+
+	.people-block-quotes{
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #F0EDE5;
+	}
+
+	.trusted-by {
+		display: none;
+	}
+
+	.page-header-holder .page-header{
+
+		.buttons-holder{
+			margin-top: 40px;
+			margin-bottom: 60px;
+		}
+
+	} 
+
+	@include mixins.MQ(M){
+
+		.page-header-holder .page-header .illustration-holder{
+			height: 480px;
+		}
+
+	}
+
+
+} 
+
+.page-template-page-people-netwerk,
+.page-template-page-jobs {
+
+	&.jobs-overview-has-no-jobs .block.block-jobs.jobs-overview-loaded{
+
+		.no-vacatures{
+			display: block;
+		}
+
+		.block-tekst-header{
+			padding-bottom: 0;
+			margin-bottom: 90px;
+		}
+
+	}
+
+	.no-vacatures{
+		display: none;
+	}
+
+	.timing span{
+		display: none;
+	}
+
+	.block-jobs-promise .button-holder{
+		margin-top: 30px;
+	}
+
+	.block.block-jobs{
+
+		&.jobs-overview-loading{
+			min-height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			ul.vacatures-overview{
+				display: none;
+			}
+
+		}
+
+		&.jobs-overview-loaded{
+			padding-bottom: 0;
+
+			.loading-message{
+				display: none;
+			}
+		}
+
+	}
+
+	#breadcrumbs{
+		font-size: 1em;
+
+		a, 
+		a:visited{
+			color: variables.$dark;
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			line-height: 0.88;
+			letter-spacing: normal;
+		}
+
+		// a:after{
+		//     background-position: -20px -1px;
+		//     display: none;
+		// }
+
+		// a:before{
+		// 	content: "";
+		// 	display: inline-block;
+		// 	width: 18px;
+		// 	height: 18px;
+		// 	background-image: url(../images/sprite.svg);
+		// 	background-position: -266px 2px;
+		// 	background-repeat: no-repeat;
+		// }	
+
+		// a:hover:before{
+		// 	background-position: -186px 2px;
+		// }
+
+		a:hover{
+			margin-left: 0px;
+			color: variables.$blue;
+		}
+
+	}
+
+	.jobs-detail{
+
+		a.showAllJobs{
+			font-family: variables.$moskau;
+			font-size: 1.6em;
+			font-weight: 500;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 0.88;
+			letter-spacing: normal;
+			color: variables.$white;
+		}
+
+		.jobs-detail-header{
+			.title{
+				margin: 25px 0;
+				font-family: variables.$moskau-md;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.1;
+				letter-spacing: normal;
+				color: variables.$dark;
+				font-size: 3.6em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 110%; /* 6.38rem */
+
+				@include mixins.MQ(S){
+					margin: 45px 0 25px 0;
+					font-size: 5.8em;
+				}
+
+			}
+		
+			.job-detailers{
+				margin-top: 30px;
+			}
+
+			.blue-button{
+				margin-top: 30px;
+				margin-bottom: 30px;
+
+				@include mixins.MQ(S){
+					margin-top: 64px;
+					margin-bottom: 120px;
+				}
+
+			}
+
+			#breadcrumbs{
+				margin-top: 45px;
+
+				@include mixins.MQ(S){
+					margin-top: 90px;
+				}
+			}
+		}
+
+		// .job-detail-holder{
+		// 	display: flex;
+		// 	flex-direction: column;
+
+		// 	@include MQ(S){
+		// 		flex-direction: row;
+		// 		justify-content: flex-start;			
+		// 	}
+
+		// }
+
+		.job-detail-holder-item{
+			margin: 0 30px 0 0;
+			font-family: variables.$moskau;
+			font-size: 2em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.4;
+			letter-spacing: normal;
+			color: variables.$white;
+		}		
+
+		.job-description-holder{
+			padding: 0;
+
+			a{
+				margin-top: 90px;
+			}
+
+			@include mixins.MQ(S){
+				padding: 0 45px;
+			}
+
+			@include mixins.MQ(M){
+				padding: 0 60px;
+			}			
+		}
+
+		.job-sidebar{
+
+			@include mixins.MQ(M){
+				max-width: 175px;
+				float: left;
+			}	
+
+			.job-title{
+				font-family: variables.$moskau;
+				font-size: 2.2em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.2;
+				letter-spacing: normal;
+				color: variables.$dark;
+				margin: 0 0 15px 0;
+				padding: 0;
+			}
+
+			a.button{
+				margin: 0 0 30px 0;				
+			}
+
+			.vacature-delen-box{
+				padding: 30px;
+				text-align: center;
+			}
+		}
+	}
+
+	.vacatures-overview{
+		width: 100%;
+		background-color: variables.$white;
+
+		.vacature-linker{
+
+			a{
+				display: block;
+				padding: 40px;
+				font-size: 1em;
+				margin-bottom: 16px;
+				border-radius: 8px;
+				overflow: hidden;
+				background: var(--mf-beachsand-1, #F6F4EF);
+
+				&:hover{
+					text-decoration: none;
+				}
+
+			}
+
+			h4.waar{
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.27;
+				letter-spacing: normal;
+				font-size: 2.2em;
+				color: variables.$dark;
+				font-family: variables.$moskau-md;
+			}
+
+			h3{
+				font-family: variables.$moskau-md;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.27;
+				letter-spacing: normal;
+				color: variables.$blue;
+				font-size: 2.6em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 120%; /* 3.12rem */
+				margin: 0 0 16px 0;
+			}
+
+			h3,
+			h4{
+				margin-bottom: 16px;
+			}
+
+			header p{
+				font-family: variables.$dm;
+				font-size: 1.6em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.3;
+				letter-spacing: normal;
+				color: variables.$dark;
+				text-align: left;
+				max-width: 100%;
+				margin: 0 0 10px 0;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+
+				font-style: normal;
+				font-weight: 400;
+				line-height: 130%; /* 2.08rem */
+
+			}
+
+			.vacature-category{
+				font-family: variables.$moskau-bd;
+				font-size: 1.6em;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				color: variables.$dark;
+				margin-bottom: 21px;
+			}
+
+		}
+	}
+}
+
+.people-block-deel-uitmaken{
+	margin-top: 60px;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(0deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.20) 100%), #00C2FF;
+
+	@include mixins.MQ(S){
+		margin-top: 160px;
+	}
+
+}

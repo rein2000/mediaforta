@@ -1,0 +1,155 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+body.page-template-page-sea {
+
+	// .tekstblok .check-icon, 
+	// .jobs-kenmerk .check-icon {
+	//     width: 64px;
+	//     height: 64px;
+	//     border-radius: 64px;
+	//     background-position: -547px -187px;
+	// }
+
+	#inner-header {
+	    padding: 20px 21px 20px 21px;
+	}
+
+	@include mixins.MQ(S){
+
+		#inner-header .inner-header-left{
+			min-height: 52px;
+		}
+
+	}
+
+
+	.tekstblok img, 
+	.jobs-kenmerk img{
+		width: 64px;
+	}
+
+	// &.has-banner #main,
+	// #main {
+	//     padding-top: 0;
+	// }
+
+	.hamburger,
+	.small-menu,
+	#inner-header .inner-header-left .nav.dropdown-nav,
+	&.has-banner #banner{
+		display: none;
+	}	
+
+	// header.header{
+
+	// 	display: none;
+	// }
+
+	.page-header-holder{
+		background: variables.$dark;
+
+		.page-header:before{
+			display: none;
+		}
+
+		#breadcrumbs{
+			display: none;
+		}
+
+		a.transparent-button, 
+		a.transparent-button:active, 
+		a.transparent-button:visited, 
+		.transparent-button, 
+		.transparent-button:active, 
+		.transparent-button:visited,
+		.page-header .tekst-holder p{
+			color: white;
+		}
+
+		a.transparent-button, 
+		a.transparent-button:active, 
+		a.transparent-button:visited, 
+		.transparent-button, 
+		.transparent-button:active, 
+		.transparent-button:visited{
+			&:after{
+				background-position: -20px 0;
+				opacity: 1;
+			}
+
+			&:hover{
+				background-color: variables.$blue;
+			}
+		}
+
+		.page-header .tekst-holder h1{
+			color: white;
+		}
+
+		a.blue-button,
+		.blue-button{
+			border-color: white;
+			background-color: white;
+			color: variables.$dark;
+
+			&:after{
+				opacity: 1;
+				background-position: -100px 0;			
+			}
+
+			&:before{
+				opacity: 0;
+				background-position: -20px 0;			
+			}	
+
+			&:hover{
+				background-color: variables.$blue;
+				border-color: variables.$blue;
+				color: white;
+
+				&:after{
+					opacity: 0;
+				}
+
+				&:before{
+					opacity: 1;
+				}	
+
+			}
+		}
+
+	}
+
+	@include mixins.MQ(S){
+
+		.bg-photo-holder{
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-size: cover;
+		}
+
+	}
+
+	.tekstblok{
+		background: variables.$dark;
+
+		h3,
+		p{
+			color: white;
+		}
+
+	}
+
+	.block.block-tekst-kolom:first-child{
+		background: #f9f8f5;
+	}
+	
+	.running-tekst .tekstblok p a{
+		color: white;
+	}
+
+}

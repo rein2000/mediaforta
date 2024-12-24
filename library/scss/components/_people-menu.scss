@@ -1,0 +1,174 @@
+@use "../partials/variables";
+
+.header {
+    background: white;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+}
+
+.languages li.menu-item-has-children span, 
+.languages li.menu-item-has-children li{
+    background: white;		
+}
+
+@media (max-width: 1199px) {
+
+	.single-case #main{
+		padding-top: 0;
+	}	
+
+	body #container:after{
+		width: 100%;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: variables.$dark;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		z-index: 300;
+		transition: all .1s ease-in-out;
+	}
+
+}
+
+.small-menu{
+	position: absolute;
+	top: 15px;
+	right: 21px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+
+	ul.small-menu-links{
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: row;
+
+		li{
+			margin: 0 21px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+
+		a,
+		a:visited{
+			color: variables.$dark;
+			font-family: variables.$moskau-md;
+			font-size: 1.4em;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 100%; /* 1.4rem */
+
+			&.current-menu-item,
+			&:hover{
+				color: variables.$blue;
+
+				// span.number-vacatures{
+				// 	background: $dark;
+				// }
+			}
+		}
+	}
+}
+
+.small-menu-links{
+
+	li.vacatures-counter{
+		position: relative;
+		transition: all .2s ease;
+
+		&.numberOfJobsReady{
+			padding-right: 28px;
+
+			span.number-vacatures{
+				transform: scale(1);
+			}
+
+		}
+
+	}
+
+	span.number-vacatures{
+		display: block;
+		width: 20px;
+		height: 20px;
+		background: variables.$blue;
+		border-radius: 20px;
+		color: white;
+		margin-left: 5px;
+		line-height: 20px;
+		text-align: center;
+		color: white;
+		font-size: 11px;
+		padding-top: 1px;
+		position: absolute;
+		top: -5px;
+		right: 0;
+		transform: scale(0.33);
+		transition: all .2s ease .66s;
+	}
+
+}
+
+// body.mobile-menu-active {
+
+// 	@media (max-width: 1199px) {
+
+// 	    -ms-touch-action: none;
+// 	    touch-action: none;
+// 		overflow: hidden;
+
+// 		.mobile-menu{
+// 			max-height: 1800px;
+// 			overflow-y: auto;
+// 			-webkit-overflow-scrolling: touch;
+// 		}
+
+// 		.header #inner-header{
+// 			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+// 		}
+
+// 		#container:after{
+// 			height: 100%;
+// 		}
+
+// 	}
+
+// 	&.lang-fr {
+
+// 		@media (max-width: 1599px) {
+
+// 		    -ms-touch-action: none;
+// 		    touch-action: none;
+// 			overflow: hidden;
+
+// 			.mobile-menu{
+// 				max-height: 1800px;
+// 				overflow-y: auto;
+// 				-webkit-overflow-scrolling: touch;
+// 			}
+
+// 			.header #inner-header{
+// 				box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+// 			}
+
+// 			#container:after{
+// 				height: 100%;
+// 			}
+
+// 		}
+
+// 	}
+
+// }
+
+
+
+

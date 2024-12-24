@@ -1,0 +1,111 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.page-template-page-stage {
+
+	@include mixins.MQ(M){
+
+		.page-header > .uk-grid{
+			flex-direction: row-reverse;
+		}
+
+	}
+
+	@include mixins.MQ(L){
+
+		.header-image-holder {
+			right: auto;
+			left: -60px;
+			z-index: -1;
+		}
+
+	}
+
+	.header-left .bulletpoints{
+		display: none;
+	}
+
+	.block-quotes-2023 {
+
+
+
+		.block-bottom{
+			display: none;
+		}
+
+		.slider-nav-logos{
+			justify-content: flex-start;
+			height: 4px;
+			margin-top: 32px;
+
+			li a .logo-image .logo-image-holder{
+				display: none;
+			}
+
+			li a {
+				height: 4px;
+				width: 32px;
+				background: #DFDCD5;
+				border-radius: 4px;
+			}
+
+			li a:hover,
+			li.uk-active a {
+				background: variables.$blue;
+			}
+
+			li{
+				flex: 0 0 56px
+			}
+
+
+		}
+
+	}
+
+	.block.block-cta-holder{
+		.block-cta {
+
+			.bg-holder{
+				width: 100%;
+				border-radius: 0.8rem;
+				background: linear-gradient(90deg, rgba(169, 243, 13, 0.20) 0%, rgba(169, 243, 13, 0.00) 50%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), #16CC94;
+				padding: 64px;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+			}
+
+			h1{
+				color: var(--MF-Royal-Blue-Dark, #17285D);
+				text-align: center;
+				font-feature-settings: 'clig' off, 'liga' off;
+				/* MF H2 Heading */
+				font-family: variables.$moskau;
+				font-size: 4em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 120%; /* 4.8rem */
+			}
+
+			p{
+				color: var(--MF-Royal-Blue-Dark, #17285D);
+				text-align: center;
+				font-feature-settings: 'clig' off, 'liga' off;
+				font-family: variables.$dm;
+				font-size: 1.8em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 140%; /* 2.52rem */
+			}
+
+			a.button{
+				margin-top: 26px;
+			}
+		}
+	
+	}
+
+}

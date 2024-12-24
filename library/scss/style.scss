@@ -1,0 +1,110 @@
+// Sass variables
+@use "sass:meta";
+@use "partials/variables";
+
+// Sass functions
+@use "partials/functions";
+
+// import mixins
+@use "partials/mixins";
+
+@forward "hamburgers/hamburgers";
+
+@use "mmenu-light/dist/mmenu-light.css";
+
+
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+I mean, you can do whatever you want. The world is your oyster. Unless
+you hate oysters, then the world is your peanut butter & jelly sandwich.
+*********************/
+
+// buttons
+@use "modules/buttons";
+
+// forms (inputs & labels)
+@use "modules/forms";
+
+
+/*********************
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*********************/
+
+// styles in base.scss
+@use "components/base";
+@use "components/archive";
+@use "components/dropdown";
+@use "components/accordion";
+@use "components/page-header";
+@use "components/footer";
+@use "components/header-animation";
+@use "components/header-animation-cards";
+@use "components/blocks.scss";
+@use "components/tekst_header.scss";
+@use "components/tekst_met_foto.scss";
+@use "components/tekst_kolom.scss";
+@use "components/case_slider.scss";
+@use "components/cta.scss";
+@use "components/download.scss";
+@use "components/experten.scss";
+@use "components/logo_slider.scss";
+@use "components/newsletter.scss";
+@use "components/offerte.scss";
+@use "components/boost.scss";
+@use "components/quote-2023.scss";
+@use "components/quotes_slider.scss";
+@use "components/contentcreators-slider.scss";
+@use "components/homepage_intro.scss";
+@use "components/homepage_slang.scss";
+@use "components/details.scss";
+@use "components/content_team.scss";
+@use "components/people_switcher.scss";
+@use "components/landingspage.scss";
+@use "components/simple.scss";
+@use "components/culture.scss";
+@use "components/onboarding.scss";
+@use "components/stage.scss";
+@use "components/prices.scss";
+@use "components/manier_van_werken.scss";
+
+@use "components/teaser.scss";
+@use "components/afbeelding.scss";
+@use "components/related_blogposts.scss";
+@use "components/blog_tiles.scss";
+@use "components/vacatures.scss";
+@use "components/case.scss";
+@use "components/whitepaper.scss";
+@use "components/mmenu";
+
+@use "templates/international_content.scss";
+@use "templates/why.scss";
+@use "templates/typeform.scss";
+@use "components/contact-form";
+
+@use "components/people.scss";
+@use "components/people-menu.scss";
+@use "components/people-header.scss";
+@use "components/people-netwerk.scss";
+@use "components/sea.scss";
+
+@use "components/banner.scss";
+@use "components/profile-page.scss";
+
+/*********************
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*********************/
+@media print {
+
+	// styles in print.scss
+	@include meta.load-css("partials/print");
+
+}
+

@@ -1,0 +1,18 @@
+/*!
+ * Mmenu Light
+ * mmenujs.com/mmenu-light
+ *
+ * Copyright (c) Fred Heusschen
+ * www.frebsite.nl
+ *
+ * License: CC-BY-4.0
+ * http://creativecommons.org/licenses/by/4.0/
+ */
+
+@use 'modules/offcanvas-drawer/index';
+@use 'modules/sliding-panels-navigation/index' as index2;
+
+// Hide mobile menu until it is ready (Custom tench)
+#container #mmenu{
+	display: none;
+}

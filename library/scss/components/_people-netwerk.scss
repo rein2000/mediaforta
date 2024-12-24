@@ -1,0 +1,98 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.page-template-page-people-netwerk.jobs-overview-has-no-jobs {
+	.page-header .header-cta-button .transparent-button,
+	.block-jobs {
+		display: none;
+	}
+}
+
+.page-template-page-people-netwerk main.people-style {
+
+	.people-block-ontdek-2{
+		padding-bottom: 30px;
+	
+		@include mixins.MQ(S){
+			padding-bottom: 120px;
+		}
+
+		@include mixins.MQ(L){
+			padding-bottom: 200px;
+		}		
+
+	}
+
+	.people-card-slider-holder{
+		width: 100%;
+		max-width: 2000px;
+		margin: 0 auto;
+		
+		.uk-slider-items {
+			padding: 80px 0 60px 0;
+	
+			.buttons-holder{
+				display: none;
+			}
+
+			header{
+				margin-top: 16px;
+				margin-bottom: 16px;
+				
+				h3{
+					margin: 0;
+					padding: 0;
+					font-size: 2.5em;
+					color: variables.$blue;
+					font-weight: 400;
+					font-family: variables.$moskau-md;
+				}
+			
+				h4{
+					margin: 0;
+					padding: 0;
+					font-family: variables.$moskau-md;
+					font-size: 1.8em;
+					line-height: 30px;
+					text-align: center;
+					color: variables.$dark;
+					font-weight: 400;
+				}
+			}
+		}
+
+		&:before,
+		&:after{
+			width: 30px;
+			height: 100%;	
+			position: absolute;
+			top: 0;
+			content: "";
+			z-index: 200;
+
+			@include mixins.MQ(S){
+				width: 200px;
+			}
+		}
+
+		&:before{
+			left: 0;
+			background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.66) 19%, rgba(255,255,255,0) 100%);
+		}
+
+		&:after{
+			right: 0;
+			background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.66) 19%, rgba(255,255,255,0) 100%);
+		}		
+
+		.uk-slider-container{
+			position: relative;
+		}
+
+	}
+
+	.people-card-slider-holder .uk-slider-items > li{
+		opacity: 1;
+	}
+
+}

@@ -1,0 +1,10 @@
+@use "../partials/variables";
+
+.block-people-switcher{
+	background: variables.$haze;
+	padding-top: 30px;
+
+	.block-tekst-header{
+		margin-top: 45px;
+	}
+}

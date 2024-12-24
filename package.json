@@ -1,0 +1,98 @@
+{
+  "name": "MF Agency",
+  "version": "2.0.0",
+  "description": "MF Agency front-end setup",
+  "dependencies": {
+    "@vimeo/player": "^2.20.1",
+    "fitvids": "^2.1.1",
+    "jquery": "^3.6.0",
+    "uikit": "^3.0.0-beta.35"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.6",
+    "concat": "^1.0.3",
+    "esbuild": "0.19.4",
+    "eslint": "^8.23.1",
+    "livereload": "^0.9.3",
+    "sass": "^1.83.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0",
+    "browserify": "^17.0.0",
+    "file-system": "^2.2.2",
+    "jsrender": "^1.0.11",
+    "vanilla-lazyload": "^17.8.3",
+    "watchify": "^4.0.0"
+  },
+  "scripts": {
+    "cache-bust-write": "node library/build-process/cache-bust-write.js",
+    "sass:watch": "sass library/scss/style.scss library/cssdev/style.css --watch --quiet-deps & sass library/scss/style-uikit.scss library/cssdev/style-uikit.css --watch --quiet",
+    "js:watch": "esbuild library/js/src/scripts.js --bundle --watch=forever --outfile=library/js/dev/scripts.js",
+    "watch": "npm run js:watch & npm run sass:watch & livereload",
+    "compile:sass": "sass library/scss/style.scss library/cssdev/style.css --quiet-deps && sass library/scss/style-uikit.scss library/cssdev/style-uikit.css --quiet",
+    "concat:css": "concat -o library/css/style.concat.css library/cssdev/style-uikit.css library/cssdev/style.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' library/css/style.concat.css -o library/css/style.prefix.css",
+    "compress:css": "sass library/css/style.prefix.css library/css/style.build.css --style=compressed",
+    "lint": "eslint library/js/src/scripts.js --fix && eslint library/js/src/modules/*.js --fix",    
+    "build:js": "npm run lint && esbuild library/js/src/scripts.js --bundle --minify --target=es2020 --outfile=library/js/dist/scripts.js",
+    "build:css": "npm run compile:sass && npm run concat:css && npm run prefix:css && npm run compress:css",
+    "build": "npm run cache-bust-write && npm run build:css && npm run build:js"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "sourceType": "module",
+      "ecmaVersion": "latest"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "globals": {
+      "UIkit": true,
+      "jQuery": true,
+      "Vimeo": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "quotes": [
+        "error",
+        "double",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "ignore",
+          "objects": "ignore",
+          "imports": "never",
+          "exports": "never",
+          "functions": "ignore"
+        }
+      ],
+      "arrow-parens": 0,
+      "no-tabs": 0,
+      "indent": [
+        "error",
+        "tab",
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "no-console": 1,
+      "generator-star-spacing": 0
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "info": "https://spapas.github.io/2015/05/27/using-browserify-watchify/",
+  "author": "Rein Vyncke",
+  "license": "ISC"
+}

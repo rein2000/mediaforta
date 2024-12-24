@@ -1,0 +1,245 @@
+@use "../partials/variables";
+
+// .page-template-page-why {
+
+// 	.page-header-holder{
+// 		background-color: white;	
+
+// 		.page-header .tekst-holder {
+// 			flex: 0 0 70%;
+// 			max-width: 100%;
+		
+// 			p{
+// 				font-family: $moskau-md;
+// 				font-size: 2.1em;
+// 				line-height: 120%;
+// 				/* or 31px */
+// 				text-align: center;
+// 			}
+
+// 		}
+
+// 	}
+
+// }
+
+.why-table-holder{
+
+	.table-holder{
+		padding: 16px;
+		background: #F6F8FA;
+		margin: 180px 0 0 0;
+		border-radius: 6px;
+		width: 100%;
+	}
+
+	table{
+		width: 100%;
+		padding: 16px;
+		margin: 0;
+
+		th{
+			font-family: variables.$moskau-md;
+			font-size: 2.2em;
+			line-height: 130%;
+			color: variables.$slate;
+		}
+
+		td{
+			font-family: variables.$moskau;
+			font-size: 1.6em;
+			line-height: 130%;
+			color: variables.$slate;
+
+			 &.vert-header{
+				font-family: variables.$moskau-bd;
+				font-size: 1.8em;
+				line-height: 130%;
+				color: variables.$darkblue;
+				text-align: left;
+			 }
+
+			 span{
+			 	display: block;
+			 	font-size: .8em;
+			 	line-height: 1.1em;
+			 }
+
+		}
+
+		tr{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: stretch;
+			border-bottom: 1px solid #DADCE0;
+
+			&:last-child{
+				border-bottom: 1px solid transparent;
+			}			
+
+			th{
+				flex: 0 0 20%;
+				text-align: center;
+				padding: 24px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				border-left: 1px solid #DADCE0;
+				font-family: variables.$moskau-bd;
+				font-weight: 400;
+			}
+
+			td{
+				flex: 0 0 20%;
+				text-align: center;
+				padding: 24px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				border-left: 1px solid #DADCE0;
+				font-family: variables.$dm;
+				font-weight: 500;
+			}
+
+
+			th,
+			td{
+				color: variables.$dark;
+
+				&:first-child{
+					border-left: 1px solid transparent;
+					align-items: flex-start;
+					padding-left: 0;
+				}	
+
+				&.blue-bg-cell{
+					background-color: variables.$dark;
+					color: white;
+
+					&:before{
+						content: "";
+						width: 100%;
+						height: 1px;
+						background-color: red;
+						position: absolute;
+						top: -1px;
+						left: 0;
+					}
+
+					a,
+					a:visited{
+						color: variables.$green;
+						text-decoration: none;
+
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+
+				.icon-check,
+				.icon-nope{
+					width: 24px;
+					height: 24px;
+					background-image: url(../images/sprite.svg);
+				}
+
+				.icon-nope{
+					background-position: -81px -1044px;
+				}
+
+				.icon-check{
+					background-position: -148px -1044px;
+				}
+
+
+
+			}
+
+			th{
+				padding-top: 36px;
+			}
+
+			th.blue-bg-cell{
+				background-color: variables.$dark;
+				color: white;
+				padding-top: 12px;
+				justify-content: flex-start;
+				font-family: variables.$moskau-md;
+
+				&:before{
+					content: "";
+					width: 100%;
+					height: 32px;
+					background-color: variables.$dark;
+					position: absolute;
+					top: -32px;
+					left: 0;
+					border-top-left-radius: 9px;
+					border-top-right-radius: 9px;
+				}
+			}
+
+			td.blue-bg-cell{
+				background-color: variables.$dark;
+				color: white;
+				font-family: variables.$moskau-md;
+
+				&:before{
+					content: "";
+					width: 100%;
+					height: 1px;
+					background-color: #2D3D6D;
+					position: absolute;
+					top: -1px;
+					left: 0;
+				}
+
+				&.last-row{
+
+					&:after{
+						content: "";
+						width: 100%;
+						height: 24px;
+						background-color: variables.$dark;
+						position: absolute;
+						bottom: -24px;
+						left: 0;
+						border-bottom-left-radius: 9px;
+						border-bottom-right-radius: 9px;
+					}
+
+				}
+			}
+
+
+		}
+	}
+
+	.table-holder{
+		background-color: variables.$beige;
+		margin-top: 30px;
+			
+		table tr{
+			border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+			&:last-child{
+				border-bottom: 1px solid transparent;
+			}
+		}
+
+		table tr th, 
+		table tr td{
+
+			&:first-child{
+				border-left: 1px solid transparent;
+			}
+		}
+	}
+
+} 

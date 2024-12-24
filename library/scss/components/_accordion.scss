@@ -1,0 +1,130 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-accordion {
+
+	.icon{
+		display: inline-block;
+		width: 48px;
+		height: 48px;
+		border-radius: 48px;
+		background-color: variables.$beachsand;
+		background-repeat: no-repeat;
+		background-size: 60% auto;
+		background-position: center center;
+		position: relative;
+		top: -1px;
+		flex: 0 0 48px;
+		margin-right: 24px;
+		transform: scale(0.75,0.75);
+
+		@include mixins.MQ(S){
+			margin-right: 55px;
+			transform: scale(1, 1);
+		}
+	}
+
+	.uk-accordion-title{
+		font-size: 1em;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+
+		&:before{
+			position: absolute;
+			top: 10px;
+			right: 0;
+			width: 24px;
+			height: 24px;
+			background-image: url(../images/sprite.svg);
+			background-position: -468px -684px;
+			background-repeat: no-repeat;
+		}
+
+	}
+
+	.uk-open .uk-accordion-title:before{
+
+		display: none;
+
+		@include mixins.MQ(S){
+			display: block;
+			background-position: -518px -684px;
+		}
+
+	}
+
+	.accordion-title-inner{
+		color: variables.$blue;
+		font-size: 2.6em;
+		font-family: variables.$moskau-md;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		margin: 0;
+		padding: 0 40px 0 0;
+		display: inline-block;
+	}
+
+	.uk-accordion-content{
+
+		p{
+
+			color: variables.$dark;
+			font-size: 1.8em;
+			font-family: variables.$dm;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+			letter-spacing: -0.01rem;
+			margin: 0 0 .5em 0;
+			padding: 0 12px 0 72px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			@include mixins.MQ(S){
+				padding-left: 103px;
+				padding-right: 240px;
+			}
+
+			a,
+			a:visited {
+				color: variables.$dark;
+				text-decoration: none;
+				font-weight: 500;
+				border-bottom: 1px solid variables.$spring;
+
+				&:hover{
+					color: variables.$blue;
+					text-decoration: none;
+					border-bottom: 1px solid variables.$ribbon;
+				}
+			}
+
+		}
+
+	}
+
+	.uk-accordion > li{
+		border-top: 1px solid #DFDCD5;
+		padding: 24px 0;
+		margin: 0;
+
+		&.uk-open{
+
+			.accordion-title-inner{
+				color: variables.$dark;
+			}
+
+		}
+	}
+
+	.uk-accordion {
+		border-bottom: 1px solid #DFDCD5;
+	}	
+
+}

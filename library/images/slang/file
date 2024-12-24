@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="435px" height="478px" viewBox="0 0 435 478" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 16</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02---Mediaforta-2019---Home-2" transform="translate(-897.000000, -2172.000000)">
+            <g id="Group-8" transform="translate(-20.000000, 1122.000000)">
+                <g id="Group-14" transform="translate(0.000000, 382.000000)">
+                    <g id="Group-24" transform="translate(917.000000, 555.000000)">
+                        <g id="Group-16" transform="translate(0.000000, 128.000000)">
+                            <g id="Group-19" transform="translate(0.000000, 123.750000)" fill="#0237FF">
+                                <circle id="Oval-Copy-10" cx="100" cy="100" r="100"></circle>
+                            </g>
+                            <g id="Group-17" transform="translate(110.000000, 305.000000)" fill="#FFFFFF" stroke="#504FFF" stroke-width="20">
+                                <circle id="Oval-Copy-9" cx="68.75" cy="68.75" r="78.75"></circle>
+                            </g>
+                            <g id="Group-21" transform="translate(102.500000, 0.000000)" fill="#FFFFFF" stroke="#272E45" stroke-width="15">
+                                <circle id="Oval" cx="75" cy="75" r="82.5"></circle>
+                            </g>
+                            <g id="Group-20" transform="translate(236.250000, 61.250000)" fill="#FFFFFF" stroke="#0DF394" stroke-width="20">
+                                <circle id="Oval-Copy-6" cx="93.75" cy="93.75" r="93.75"></circle>
+                            </g>
+                            <text id="+20.000-articles-wri" font-family="MoskauGrotesk-Bold" font-size="40" font-weight="bold" line-spacing="31.2" fill="#FFFFFF">
+                                <tspan x="18.46" y="203.52">+20.000</tspan>
+                                <tspan x="175.3" y="211" font-size="28"></tspan>
+                                <tspan x="55.552" y="242.2" font-size="24" line-spacing="22.2">articles</tspan>
+                                <tspan x="58" y="264.4" font-size="24" line-spacing="22.2">written</tspan>
+                            </text>
+                            <text id="+10-languages" font-family="MoskauGrotesk-Bold" font-size="56" font-weight="bold" line-spacing="28.2" fill="#504FFF">
+                                <tspan x="120.872" y="369.298">+</tspan>
+                                <tspan x="153.8" y="369.298" letter-spacing="-1">10</tspan>
+                                <tspan x="226.392" y="395.25" font-size="28"></tspan>
+                                <tspan x="123.784" y="423.45" font-size="24" letter-spacing="-1">languages</tspan>
+                            </text>
+                            <text id="+20-countries" font-family="MoskauGrotesk-Bold" font-size="56" font-weight="bold" line-spacing="28.2" fill="#272E45">
+                                <tspan x="119.372" y="67.548">+20</tspan>
+                                <tspan x="226.892" y="93.5" font-size="28"></tspan>
+                                <tspan x="118.686" y="121.7" font-size="28">countries</tspan>
+                            </text>
+                            <text id="+3000-content-creato" font-family="MoskauGrotesk-Bold" font-size="40" font-weight="bold" line-spacing="27" fill="#2A3148">
+                                <tspan x="264.96" y="138.77">+3000</tspan>
+                                <tspan x="388.8" y="150.45" font-size="28"></tspan>
+                                <tspan x="280.041" y="177.45" font-size="26" line-spacing="24">content </tspan>
+                                <tspan x="276.219" y="201.45" font-size="26" line-spacing="24">creators</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

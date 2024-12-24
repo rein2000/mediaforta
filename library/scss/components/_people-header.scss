@@ -1,0 +1,263 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.inner-header-top .languages{
+	min-width: 10px;
+} 
+
+#inner-header .inner-header-top .nav {
+
+	li.current-menu-item > a,
+	li.current_page_item > a{
+		color: variables.$blue;			
+	}
+
+}
+
+.page-header-holder .page-header .tekst-holder{
+	max-width: 700px;
+
+	@include mixins.MQ(S){
+		padding-right: 30px;
+	}
+}
+
+.page-header-holder .page-header .tekst-holder h1 b{
+	color: variables.$blue;
+}
+
+@include mixins.MQ(M){
+
+	.page-header-holder .page-header .illustration-holder{
+		width: 100%;
+		max-width: 100%;
+	}
+	
+
+}
+
+.page-header-holder .page-header .tekst-holder h1 {
+
+	b,
+	strong,
+	span,
+	a{
+		color: variables.$blue;
+		font-weight: 400;
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+}
+
+.page-header-holder .page-header .tekst-holder{
+	padding-bottom: 0;
+	margin-top: 0;
+}
+
+.buttons-holder{
+	a.transparent-button.dark-text-button:visited, 
+	a.transparent-button.dark-text-button, 
+	.transparent-button.dark-text-button{
+		color: variables.$blue;
+		border-color: variables.$blue;
+
+		&:hover{
+			color: variables.$blue;
+			background-color: variables.$green;
+			border-color: variables.$green;
+		}
+	}		
+
+	a.transparent-button.dark-text-button:after, 
+	a.transparent-button.dark-text-button:before, 
+	.transparent-button.dark-text-button:after, 
+	.transparent-button.dark-text-button:before{
+		background-position: -80px 0;
+	}
+
+}
+
+.trusted-by{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 50px;
+	flex-wrap: wrap;
+
+	p{
+		font-family: variables.$moskau;
+		font-size: 1.6em;
+		line-height: 130%;
+		flex: 0 0 100%;
+
+		@include mixins.MQ(M){
+			flex: 0 0 auto;
+			margin-right: 27px;
+		}
+	}
+
+	.img-holder{
+		height: auto;
+		mix-blend-mode: multiply;
+
+		@include mixins.MQ(M){
+			margin-right: 0;
+			height: 36px;
+			margin-left: 0;
+		}			
+
+		img{
+			width: auto;
+			height: 30px;
+			margin-top: 12px;
+			margin-right: 12px;
+
+			@include mixins.MQ(M){
+				margin-top: 3px;	
+			}
+
+			&.securitas{
+				// height: 30px;
+				opacity: .66;		
+			}
+
+			&.ing{
+				// height: 32px;	
+				position: relative;
+				top: -2px;	
+
+				@include mixins.MQ(S){
+					margin-left: 17px;			
+				}
+
+			}
+
+			&.proximus{
+				// height: 40px;
+				margin-right: 0;
+
+				@include mixins.MQ(S){
+					margin-left: 13px;	
+				}
+
+			}
+
+		}
+
+	}
+}
+
+ul.mini-menu{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+
+	li:before{
+		display: none;
+	}
+
+	li{
+		font-family: variables.$moskau;
+		font-size: 1.6em;
+		line-height: 130%;
+		color: #17285D;
+	}
+}
+
+.mini-menu{
+
+	li{
+		font-size: 1.6em;
+		color: variables.$blue;
+
+		a,
+		a:visited{
+			font-family: variables.$moskau-md;
+			font-weight: 400;
+			color: variables.$blue;
+			margin-right: 60px;
+			position: relative;
+			transition: all .2s ease;
+			left: 0;
+
+			&:after{
+				content: "";
+				width: 10px;
+				height: 16px;
+				display: inline-block;
+				margin-left: 8px;
+				position: relative;
+				top: 3px;
+				background-image: url(../images/sprite.svg);
+				background-position: -311px -1048px;
+			}
+
+			&:hover{
+				text-decoration: none;
+				left: 2px;
+			}
+		}
+	}
+}	
+
+.page-header ul.bulletpoints{
+	display: none;
+}	
+
+.page-template-default .header-left.show-bulletpoints ul.bulletpoints{
+	display: flex;
+}
+
+.page-template-page-people-contentmarketeers,
+.page-template-page-people-contentcreators,
+.page-template-page-people{
+	.page-header ul.bulletpoints{
+		display: flex;
+	}
+}
+
+ul.bulletpoints{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 24px 0 0 0;
+	padding: 0;
+
+	li{
+		padding: 0 0 5px 20px;
+		margin: 0 24px 6px 0;
+		font-family: variables.$dm;
+		font-size: 1.4em;
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: 0px;
+		text-align: left;
+		position: relative;
+		color: #17285D;
+
+		@include mixins.MQ(S){
+
+		}
+
+		&:before{
+			content: "";
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			position: absolute;
+			background-image: url(../images/sprite.svg);
+			background-position: -615px -1048px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}

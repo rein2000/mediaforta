@@ -1,0 +1,299 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-quotes-2023{
+	.slider-nav-logos {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 32px;
+		margin-bottom: 32px;
+		gap: 12px;
+		min-height: 120px;
+		justify-content: center;
+
+		li{
+			flex: 0 0 calc(20% - 10px);
+
+			a{
+				display: block;
+				width: 100%;
+				height: 120px;
+				border-radius: 8px;
+				background: white;
+
+				.logo-image{
+					display: flex;
+					width: 100%;
+					height: 100%;
+					border-radius: 8px;
+					justify-content: center;
+					align-items: center;
+
+					.logo-image-holder{
+						display: block;
+						width: 60%;
+						height: 60%;
+						background-image: url(../images/quotes_sliders/MFO_logo-sandcolors_Solucious1.png);
+						background-size: contain;
+						background-position: center center;
+						background-repeat: no-repeat;
+						filter: grayscale(1);
+						mix-blend-mode: multiply;
+						opacity: .66;
+						transition: all .14s ease;
+					}
+
+				}
+			}
+
+			&.uk-active a,
+			a:hover {
+				background: linear-gradient(0deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.1) 100%), #F0EDE5;		
+
+				.logo-image-holder{
+					filter: grayscale(0);
+					opacity: 1;
+				}		
+			}			
+		}
+	}
+}
+
+.block-quote-2023{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: variables.$beachsand;
+	border-radius: 8px;
+	overflow: hidden;
+
+	@include mixins.MQ(S){
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&.block{
+		padding: 45px 0;
+	}
+
+	.block-quotes-container {
+
+		.uk-slider-nav li{
+
+			padding: 12px 5px;
+
+			&.uk-active a{
+				background: variables.$dark;
+			}
+
+			a {
+			    width: 8px;
+			    height: 8px;
+			    border: 0 solid #BBBDBF;
+				background: rgba(0, 0, 0, 0.1);
+			}
+
+		} 
+
+		.uk-position-center-left-out,
+		.uk-position-center-right-out{
+			display: block;
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+			border: 2px solid rgba(23, 40, 93, .3);
+			transition: background-color .2s ease;
+			background-image: url(../images/sprite.svg);
+			opacity: 0;
+
+			&:hover{
+				border: 2px solid variables.$dark;
+				background-color: variables.$dark;
+				opacity: 1;
+			}
+		}
+
+		&:hover{
+			.uk-position-center-left-out,
+			.uk-position-center-right-out{
+
+				opacity: 1;
+
+				@include mixins.MQ(XL){
+					opacity: .5;
+				}
+
+				&:hover{
+					border: 2px solid variables.$dark;
+					background-color: variables.$dark;
+					opacity: 1;
+				}
+
+			}
+		}
+
+		.uk-position-center-left-out{
+			left: 15px;
+			background-color: variables.$dark;
+			background-position: -80px -806px;
+			margin-top: -24px;
+
+			@include mixins.MQ(L){
+				left: 18px;
+				background-position: -80px -806px;
+			}
+
+		}
+
+	}
+
+	h2.titel{
+		font-family: variables.$moskau-md;
+		font-size: 3.2em;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.2;
+		letter-spacing: normal;
+		color: variables.$crimson;
+		margin: 0 0 15px 0;
+	}
+
+	div.quote{
+
+		margin: 0;
+
+		p{
+	  		@include variables.Quote-2023;
+
+			&{
+				margin: 0 0 10px 0;
+				hyphens: none;
+			}
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.quote-picture-bg {
+		flex-shrink: 0;
+		flex-basis: 240px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		@include mixins.MQ(M){
+			flex-basis: 360px;
+		}
+
+		.quote-picture-holder{
+			background: linear-gradient(0deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), #F0EDE5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-grow: 2;
+		}
+
+		.quote-picture {
+			width: 240px;
+			border-radius: 50%; 
+			background-size: cover; 
+			background-repeat: no-repeat; 
+			background-position: center center;
+			text-indent: -9999px;
+
+			@include mixins.MQ(S){
+				width: 150px;
+				height: 150px;
+			}
+
+			@include mixins.MQ(M){
+				width: 280px;
+				height: 280px;
+			}			
+		}
+
+		.quote-sub {
+			padding: 18px;
+			flex-grow: 0;
+			background: linear-gradient(135deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), #F0EDE5;
+		
+			p{
+				@include variables.Quote-name;
+				margin: 0;
+				color: variables.$dark;
+				font-size: 1.4em;
+				font-family: variables.$dm;
+				font-weight: 400;
+				line-height: 130%;
+
+				&:first-child{
+					font-weight: 700;
+				}
+
+				@include mixins.MQ(M){
+					font-size: 1.8em;
+				}	
+
+			}
+
+		}
+
+	}
+
+	.quote-tekst{
+		text-align: left;
+		padding: 48px;
+	}
+
+	.transparent-button{
+		margin-top: 21px;
+	}
+
+	.no-picture{
+		// max-width: 690px;
+
+		.quote-sub{
+			margin-left: 90px;
+		}
+
+	}
+	
+}
+
+@include mixins.MQ(S){
+
+	.page-template-page-people-netwerk .block-quote-2023{
+
+		@include mixins.MQ(S){
+			flex-direction: row-reverse;
+		}
+
+	}
+
+}
+
+// Quote picture zonder border-radius
+body.home .block-quote-2023{
+
+	.quote-picture-bg {
+
+		.quote-picture {
+			width: 100%;
+			height: 100%;
+			border-radius: 0; 
+			background-size: cover; 
+			background-repeat: no-repeat; 
+			background-position: center center;
+			text-indent: -9999px;		
+		}
+	}
+}
+

@@ -1,0 +1,568 @@
+@use "../partials/variables";
+@use "../partials/mixins" as *;
+
+.page-template-page-profiel{
+
+    .profile-pic{
+        display: block;
+        width: 280px;
+        height: 280px;
+        background: white;
+        border-radius: 140px;
+        background-image: url(../images/profile-page/profile-pic.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: -1;
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .page-header-profile-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 70px 0;
+        margin-bottom: 90px;
+
+        .right-side{
+            padding-top: 30px;
+        }
+
+        @include MQ(M){
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+      
+            .right-side{
+                padding-left: 30px;
+                padding-top: 0;
+            }
+            
+        }
+    }
+
+    .page-header-holder{
+        background: linear-gradient(90deg, #A7EBEC 0%, rgba(167, 235, 236, 0) 50%), #FFFFFF;
+
+        h1{
+            margin: 0;
+            font-family: variables.$moskau-md;
+            font-size: 2.6em;
+            font-weight: 400;
+            line-height: 31.2px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #17285D;
+
+            @include MQ(M){
+                text-align: left;
+            }
+        }
+
+        ul.functie{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0 0 10px 0;
+
+            @include MQ(M){
+                justify-content: flex-start;
+            }
+
+            li{
+                font-family: variables.$moskau-md;
+                font-size: 1.6em;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: 0.02em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                color: variables.$blue;
+                background: white;
+                padding: 9px 16px 9px 16px;
+                border-radius: 6px;
+                margin: 10px 10px 0 0;
+            }
+        }
+
+        .profile-tekst-holder{
+            margin: 15px 0;
+
+            p{
+                font-family: variables.$dm;
+                font-size: 1.8em;
+                font-weight: 400;
+                line-height: 25.2px;
+                text-align: center;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                margin: 0 0 .5em 0;
+                hyphens: none;
+                max-width: 600px;
+
+                @include MQ(M){
+                    text-align: left;
+                }
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+        ul.functie-tags{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            flex-wrap: wrap;
+
+            @include MQ(M){
+                justify-content: flex-start;
+            }
+
+            li{
+                display: inline-block;
+                margin: 10px 5px;
+
+                @include MQ(M){
+                    margin: 10px 10px 10px 0;
+                }
+
+
+                span.function-which{
+                    display: inline-block;
+                    font-family: variables.$dm;
+                    font-size: 1.4em;
+                    font-weight: 500;
+                    line-height: 1;
+                    letter-spacing: 0.02em;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                    padding: 9px 16px 9px 12px;
+                    border-radius: 6px;
+                    background: #a7ebec;
+                    color: #17285D;
+                }
+
+            }
+
+            span.rating{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .star{
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    margin: 6px 1px;
+                    background-image: url(../images/sprite.svg);
+                    background-position: -228px -1460px;
+
+                    &.full{
+                        background-position: -215px -1460px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .has-availability-bg{
+        position: relative;
+
+        &:before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 255px;
+            background: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background: #a7ebec;
+        }
+
+        .wrap{
+            z-index: 2;
+        }
+
+        h2{
+            font-family: variables.$moskau-md;
+            font-size: 2.6em;
+            font-weight: 400;
+            line-height: 31.2px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            position: relative;
+            z-index: 2;
+            padding: 60px 0 30px 0;
+        }
+    }
+
+    .profile-details-holder{
+        margin-top: 60px;
+        margin-bottom: 45px;
+        padding: 45px 40px 0 40px;
+        position: relative;
+        z-index: 2;
+        border-radius: 8px;
+
+        h2{
+            font-family: variables.$moskau-md;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.2em;
+            line-height: 130%;
+            color: #17285D;
+            text-align: left;
+            margin: 0;
+            padding: 0 0 20px 36px;
+
+            &.has-icon{
+                position: relative;
+
+                &:before{
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(../images/sprite.svg);
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                }
+            }
+
+            &.icon-location:before{
+                background-position: -700px -1448px;
+            }
+            &.icon-language:before{
+                background-position: -648px -1448px;
+            }
+            &.icon-paper:before{
+                background-position: -599px -1448px;
+            }
+            &.icon-speech:before{
+                background-position: -738px -1448px;
+            }
+            &.icon-heart:before{
+                background-position: -780px -1448px;
+            }
+            &.icon-top:before{
+                background-position: -538px -1448px;
+            }
+
+
+        }
+
+        .tekst-holder-profile{
+            display: inline-block;
+            background: #F6F4EF;
+            padding: 12px 16px 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 45px;
+
+            p{
+                font-family: variables.$dm;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.8em;
+                line-height: 140%;
+                color: #17285D;
+                hyphens: none;
+            }
+
+        }
+
+
+    }
+
+    .cv-details-holder{
+        margin-top: 45px;
+        margin-bottom: 45px;
+        padding: 40px;
+        position: relative;
+        z-index: 2;
+        border-radius: 8px;
+
+        a.blue-button{
+            margin-top: 12px;
+        }
+
+        h2{
+            font-family: variables.$moskau-md;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.2em;
+            line-height: 130%;
+            color: #17285D;
+            text-align: left;
+            margin: 0;
+            padding: 20px 0 60px 80px;
+            position: relative;
+
+            &:before{
+                content: "";
+                display: block;
+                width: 64px;
+                height: 64px;
+                border-radius: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #a7ebec;
+            }
+
+            &.has-icon:after{
+                content: "";
+                display: block;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background-image: url(../images/sprite.svg);
+                background-position: 0 0;
+            }
+            &.has-icon-work:after{
+                background-position: -873px -1444px;
+            }
+            &.has-icon-education:after{
+                background-position: -994px -1445px;
+            }
+            &.has-icon-certificates:after{
+                background-position: -933px -1441px;
+            }
+            &.has-icon-portfolio:after{
+                background-position: -818px -1444px;
+            }
+
+        }
+
+        .cv-werkervaring-item{
+            padding: 0 0 40px 64px;
+            border-bottom: 1px solid #DFDCD5;
+            margin-bottom: 40px;
+
+            .cv-werkervaring-item-item{
+                position: relative;
+                padding-bottom: 40px;
+
+                &:before{
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    height: calc(100% - 28px);
+                    background: #DFDCD5;
+                    position: absolute;
+                    top: 28px;
+                    left: -34px;
+                }
+            }
+
+        }
+
+        .cv-werkervaring:last-child{
+
+            .cv-werkervaring-item:last-child{
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+        }
+
+        h3{
+            font-family: variables.$moskau-md;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.2em;
+            line-height: 130%;
+            color: #17285D;
+            position: relative;
+            margin-bottom: 10px;
+
+            &:before{
+                content: "";
+                display: block;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                position: absolute;
+                top: 7px;
+                left: -40px;
+                background-color: #a7ebec;
+            }
+
+        }
+
+        ul li,
+        p{
+            font-family: variables.$dm;
+            font-style: normal;
+            font-size: 1.8em;
+            font-weight: 400;
+            line-height: 140%;
+            color: #17285D;
+            max-width: 600px;
+        }
+
+        ul li{
+            padding-left: 20px;
+            position: relative;
+
+            &:before{
+                content: "";
+                display: block;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+                position: absolute;
+                top: 10px;
+                left: 3px;
+                background-color: #17285D;
+            }
+
+        }
+    }
+
+    .hoe-holder{
+        border-radius: 8px;
+
+        @include MQ(M){
+            margin-top: 45px;
+            padding: 40px;
+            margin-bottom: 45px;
+            background-color: white;
+        }
+    }
+
+    .has-availability-bg{
+        padding-bottom: 45px;
+        margin-bottom: 120px;
+    }
+
+    .hoe-holder-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 30px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 45px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:before{
+            content: "";
+            width: 100%;
+            height: 80%;
+            height: calc(100% - 92px);
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            border-radius: 8px;
+        }
+
+        @include MQ(M){
+            margin-bottom: 0;
+        }
+
+        .deco{
+            display: block;
+            width: 184px;
+            height: 184px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+
+            &.deco-production{
+                background-image: url(../images/profile-page/IMG_Production@2x.png);
+            }
+
+            &.deco-delivery{
+                background-image: url(../images/profile-page/IMG_Delivery@2x.png);
+            }
+
+            &.deco-briefing{
+                background-image: url(../images/profile-page/IMG_Briefing@2x.png);
+            }
+
+            @include MQ(M){
+                margin-top: -120px; 
+            }
+
+        }
+
+        h4{
+            font-family: variables.$moskau-md;
+            font-size: 2.2em;
+            line-height: 130%;
+            text-align: center;
+            color: #504FFF;
+            margin-bottom: 10px;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+
+            @include MQ(M){
+                margin-top: 10px;
+            }
+        }
+        p{
+            font-family: variables.$dm;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.6em;
+            line-height: 130%;
+            text-align: center;
+            color: #17285D;
+            hyphens: none;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+
+            @include MQ(M){
+                padding-bottom: 0;
+            }
+
+            // &:last-child{
+            //     margin-bottom: 0;
+            // }
+        }
+    }
+
+
+}

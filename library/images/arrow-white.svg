@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle Copy 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="sprite" transform="translate(-25.000000, -3.000000)" stroke="#FFFFFF" stroke-width="2">
+            <polyline id="Rectangle-Copy-2" transform="translate(26.000000, 9.656854) rotate(-315.000000) translate(-26.000000, -9.656854) " points="22 5.65685425 30 5.65685425 30 13.6568542"></polyline>
+        </g>
+    </g>
+</svg>

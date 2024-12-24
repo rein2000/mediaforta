@@ -1,0 +1,302 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.page-header-holder .page-header{
+    position: relative;
+    z-index: 20;
+}
+
+.page-header-holder.header-animation-cards-holder-holder .page-header > .uk-grid,
+.header-animation-cards-holder-holder .wrap{
+    position: static;
+}
+
+.page-header-holder.header-animation-cards-holder-holder{
+    background: linear-gradient(118.13deg, rgba(0, 0, 0, 0.2) -0.33%, rgba(0, 0, 0, 0) 67.14%),
+    linear-gradient(0deg, #F0EDE5, #F0EDE5),
+    linear-gradient(118.1deg, rgba(255, 255, 255, 0.4) 32.6%, rgba(255, 255, 255, 0) 100%);    
+
+    .textholderer{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+}
+
+.page-template-page-people .page-header-holder.header-animation-cards-holder-holder{
+
+    @include mixins.MQ(M){
+        min-height: 600px;
+        max-height: 800px;
+        height: calc(100vh - 135px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+}
+
+.header-animation-cards-holder{
+    overflow: hidden;
+    z-index: 0;
+    height: 600px;
+
+
+    min-height: 600px;
+    max-height: 800px;
+    height: calc(100vh - 135px);
+    
+
+    // @include MQ(M){
+    //     min-height: 400px;
+    //     height: 800px;
+    //     max-height: calc(100vh - 135px);
+    // }  
+
+    @include mixins.MQ(L){
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        width: calc(50% - 36px);
+    }  
+
+    @include mixins.MQ(XL){
+        width: 700px;
+    }  
+
+    @include mixins.MQ(1600px){
+        width: 780px;
+        right: auto;
+        left: 50%;
+        margin-left: 0;
+    }          
+}
+
+.header-animation-cards-holder-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.animation-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &.third,
+    &.first {
+        animation: bannermove 21s linear infinite;
+    }
+
+    &.second {
+        animation: bannermove-reverse 30s linear infinite;
+    }  
+
+    &.first {
+    
+        .animation-block-holder{
+
+            &:nth-child(4n+1){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Amber.png);
+                }
+
+            }
+
+            &:nth-child(4n+2){
+          
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Anders.png);
+
+                }  
+
+            }
+
+            &:nth-child(4n+3){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Elenita.png);
+                }
+
+            }
+
+            &:nth-child(4n+4){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Emely.png);
+                }
+
+            }    
+
+        }
+
+    }
+
+    &.second {
+    
+        .animation-block-holder{
+
+            &:nth-child(4n+1){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Emma.png);
+                }
+                
+            }
+
+            &:nth-child(4n+2){
+          
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Enrico.png);
+
+                }  
+
+            }
+
+            &:nth-child(4n+3){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Lauren.png);
+                }
+
+            }
+
+            &:nth-child(4n+4){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Leander.png);
+                }
+
+            }    
+
+        }
+    
+    }  
+
+    &.third{
+    
+        .animation-block-holder{
+
+            &:nth-child(4n+1){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Liesbeth.png);
+                }
+                
+            }
+
+            &:nth-child(4n+2){
+          
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Manuel.png);
+
+                }  
+
+            }
+
+            &:nth-child(4n+3){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Maria.png);
+                }
+
+            }
+
+            &:nth-child(4n+4){
+
+                .animation-block{
+                    background-image: url(../images/header/cards/3_2_Card_Nobel.png);
+                }
+
+            }    
+
+        }
+
+    }
+
+}
+
+.animation-block-holder{
+    width: 270px;
+    height: 384px;
+    position: relative; 
+}
+
+.animation-block{
+    width: 240px;
+    height: 360px;
+    // background-color: green;
+    // border: 8px solid white;
+    // border-radius: 10px;
+    margin: 0 30px 0 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 6px;
+}
+
+@keyframes bannermove {
+    
+    0% {
+        transform: translate(0, 0);
+    }
+    
+    100% {
+        transform: translate(0, -1536px);
+    }
+ 
+}
+
+@keyframes bannermove-reverse {
+    
+    0% {
+        transform: translate(0, -1536px);
+    }
+    
+    100% {
+        transform: translate(0, 0);
+    }
+ 
+}
+
+.animation-block-details{
+    width: 192px;
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    text-align: center;
+    padding: 10px;
+
+    .naam{
+        color: variables.$blue;
+        font-family: variables.$dm;
+        font-weight: 500;
+        font-size: 1.8em;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .function{
+        font-family: variables.$dm;
+        font-weight: 400;
+        font-size: 1.4em;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+}

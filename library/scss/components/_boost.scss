@@ -1,0 +1,228 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.block-boost{
+	background: linear-gradient(180deg, rgba(80, 79, 255, 0.00) 0%, rgba(80, 79, 255, 0.40) 100%), #17285D;
+	padding-bottom: 0;
+	position: relative;
+
+	&:after{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+		background-image: url(../images/people/globe.png);
+
+		@include mixins.MQ(M){
+			content: "";
+			width: 50%;
+			height: 960px;
+			background-size: 100% auto ;
+			background-position: bottom right;
+			background-repeat: no-repeat;
+		}
+
+		@include mixins.MQ(L){
+			content: "";
+			width: 60%;
+			height: 960px;
+			background-size: 100% auto ;
+			background-position: bottom right;
+			background-repeat: no-repeat;
+		}
+
+		@include mixins.MQ(XL){
+			width: 100%;
+			height: 960px;
+			background-size: auto 100%;
+			background-position: bottom right;
+			background-repeat: no-repeat;	
+		}			
+	}
+
+	@include mixins.MQ(L){
+		.wrap{
+			padding: 0 118px 0 36px;
+		}
+	}
+
+	.block-tekst-header .running-tekst{
+		padding: 0 16px;
+
+		@include mixins.MQ(S){
+			padding: 0 32px;
+		}		
+
+		h2,
+		p{
+			text-align: left;
+			margin-left: 0;
+			max-width: 700px;
+			color: white;
+		}
+
+	}
+
+	.details-holder{
+		padding: 0 32px;			
+	}
+	
+	.block-tekst-header {
+		margin-bottom: 96px;
+
+		.running-tekst h2{
+			color: white;
+		}
+	}
+
+	.details-holder{
+		position: relative;
+
+		&:before{
+			content: "";
+			width: 100%;
+			width: calc(50vw + 50%);
+			height: 100%;
+			height: calc(100% + 48px);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			background: linear-gradient(180deg, rgba(23, 40, 93, 0.00) 0%, rgba(23, 40, 93, 0.05) 100%), #FFF;
+			border-radius: 8px 0px 0px 0px;
+		
+			@include mixins.MQ(L){
+				border-radius: 8px 8px 0px 0px;
+			}
+
+		}
+
+		.holder{
+			max-width: 600px;
+			position: relative;
+			z-index: 1;
+
+			.specs{
+				margin-bottom: 45px;					
+
+				@include mixins.MQ(S){
+					margin-bottom: 80px;					
+				}
+			}
+
+			.logos{
+				margin: 32px 0;
+
+				li{
+					text-align: center;
+					width: 150px;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: flex-start;
+
+					img{
+						margin: 0 auto 20px 0;
+						width: auto;
+						height: 50px;
+					}
+				}
+
+				ul{
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					margin: 0;
+					padding: 0;
+					flex-wrap: wrap;
+					flex-direction: row;
+					width: 100%;
+
+					li.securitas img{}
+					li.proximus img,
+					li.ing img{
+						width: 110px;
+						height: auto;
+					}
+
+					li.luminus img{
+						width: 105px;
+						height: auto;
+					}
+
+					li.velux,
+					li.securitas{
+						width: 110px;
+					}
+
+					li.pittmann,
+					li.billit {
+						img{
+							margin-left: 20px;
+						}
+					}
+
+					li.century21 img{
+						width: 100px;
+						height: auto;
+					}
+
+				}
+
+			}
+
+			p{
+				font-family: variables.$dm;
+				font-size: 1.6em;
+				line-height: 130%;
+				color: variables.$dark;
+
+				&.legend{
+					color: var(--mf-beachsand-2, #C0BEB7);
+					font-size: 1.1em;
+					font-family: variables.$dm;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 130%;
+					letter-spacing: 0.05rem;
+					padding-bottom: 64px;
+				}
+			}
+		}
+	}
+
+}
+
+.specs{
+
+	.specs-number{
+		display: block;
+		font-family: variables.$moskau;
+		font-size: 3.6em;
+		line-height: 110%;
+		color: variables.$dark;
+		display: block;
+
+		@include mixins.MQ(XS){
+			font-size: 4.4em;
+		}
+	}
+
+	.specs-header{
+		font-family: variables.$moskau-md;
+		font-size: 2.6em;
+		line-height: 120%;
+		color: variables.$dark;
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.specs-description{
+		font-family: variables.$dm;
+		font-size: 1.6em;
+		line-height: 130%;
+		color: variables.$dark;
+		display: block;
+	}
+
+}

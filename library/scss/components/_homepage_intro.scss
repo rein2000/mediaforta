@@ -1,0 +1,21 @@
+.block-homepage-intro {
+
+	.logo-slider{
+		margin: 30px 0 45px 0;
+		background-blend-mode: multiply;
+		opacity: .88;
+	}
+
+}
+
+.page-template-page-home .header-animation-holder{
+	.uk-cover-container {
+		height: 100%;
+
+		video{
+			top: auto;
+			bottom: 0;
+			transform: translate(-50%, 0);
+		}
+	}
+}

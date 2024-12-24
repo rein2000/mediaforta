@@ -1,0 +1,48 @@
+@use "../partials/variables";
+
+.block-newsletter{
+	padding: 90px 0;
+
+	.hbspt-form{
+		margin-top: 45px;
+	}
+
+	.newsletter-holder-active-marketing-holder{
+		text-align: center;
+	}
+
+	.newsletter-holder-active-marketing{
+		max-width: 600px;
+		margin: 45px auto 0 auto;
+
+		label{
+			display: none;
+		}
+
+		._button-wrapper{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		._error._below{
+			display: none !important;
+		}
+
+		input._has_error{
+			border: 1px solid variables.$crimson;
+		}
+
+		._form-thank-you{
+		    font-family: "MoskauGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    font-size: 1.6em;
+		    font-weight: normal;
+		    font-stretch: normal;
+		    font-style: normal;
+		    line-height: 1.4;
+		    letter-spacing: normal;
+		    color: #4f6583;
+		}
+	}
+}

@@ -1,0 +1,880 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.page-template-page-prices {
+
+	.price-calc-summary{
+		width: 200px;
+		position: fixed;
+		right: 0;
+		top: 50%;
+		opacity: 0;
+		transition: all .2s ease;
+		transform: translate(240px, -50%);
+		text-align: left;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		overflow: hidden;
+		z-index: 30;
+
+		.bg-iron,
+		.bg-white{
+			padding: 15px 30px
+		}
+
+		.left-pane{
+			text-align: left;
+		}
+
+	}
+
+	.topper-bg{
+		padding: 18px 30px;
+		background-color: white;
+		width: 100%;
+		border-radius: 4px;
+	}
+
+	.messager .nothing-selected{
+		display: block;
+	}
+
+	#block-accordion-result{
+		display: none;
+	}
+
+	&.show-price-calc-summary{
+
+		@include mixins.MQ(S){
+
+			.price-calc-summary.accordion-is-visible{
+				transform: translate(0, -50%);
+				opacity: 1;
+			    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+			}
+
+			.price-calc-summary.result-is-visible.accordion-is-visible,
+			.price-calc-summary.result-is-visible{
+				transform: translate(240px, -50%);
+				opacity: 0;
+			    box-shadow: none;
+			}
+
+		}
+
+		.messager .nothing-selected{
+			display: none;
+		}
+
+		#block-accordion-result{
+			display: block;
+		}
+
+	}
+
+	.result-name-holder{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 9px 0 0 0;
+
+		div{
+			background-color: variables.$beachsand;
+			padding: 6px 9px;
+			color: variables.$blue;
+			font-family: variables.$dm;
+			font-size: 1.4em;
+			font-weight: 500;
+			line-height: 1;
+			margin: 0 12px 12px 0;
+			letter-spacing: 0.02em;
+			text-transform: capitalize;
+		}
+
+	}
+
+	.price-wrapper{
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 3px;
+	}
+
+	.price-holder{
+		padding: 21px 0 0 30px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+		flex-wrap: wrap;
+		position: relative;
+
+		&:before{
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 24px;
+			left: 0;
+			background-image: url(../images/sprite.svg);
+			background-position: -16px -1045px;
+		}
+
+		.header-holder{
+			padding: 0;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		h3{
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			font-weight: 500;
+			line-height: 21px;
+			letter-spacing: 0px;
+			text-align: left;
+			margin: 0 12px 0 0;
+			padding: 0;
+			color: variables.$dark;
+		}
+
+		&.price-holder-1 p.price{
+			margin-left: 0;
+		}
+
+		p{
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 21px;
+			letter-spacing: normal;
+			color: variables.$dark;
+			margin: 0 0 0 0;
+			padding: 0;
+
+			&.price{
+				font-family: variables.$dm;
+				font-size: 1.8em;
+				font-weight: 500;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.5;
+				letter-spacing: normal;
+				text-align: center;
+				color: variables.$dodger;
+				margin: -2px 10px 0 10px;
+				padding: 0;
+			}
+		}
+	}
+	
+	.price-holderer{
+		margin-top: 16px;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		position: relative;
+
+		p{
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 21px;
+			letter-spacing: normal;
+			color: variables.$dark;
+			margin: 0 0 0 0;
+			padding: 0;
+
+			&.price{
+				font-family: variables.$moskau;
+				font-size: 3.2em;
+				font-weight: 500;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.5;
+				letter-spacing: normal;
+				text-align: center;
+				color: variables.$dodger;
+				margin: 3px 0 0 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.price-info {
+		margin-top: 12px;
+	}
+
+	.price-info p{
+		font-family: variables.$dm;
+		font-size: 1.6em;
+		font-weight: 400;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.3;
+		letter-spacing: normal;
+		text-align: center;
+		color: variables.$slate;
+		margin: 0;
+		padding: 15px 30px 30px 30px;
+		hyphens: none;
+
+		b,
+		strong{
+			font-weight: 600;
+		}
+	}
+
+	.price-details {
+		padding: 0 0 0 0;
+		text-align: left;
+		width: 100%;
+
+		@include mixins.MQ(XS){
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@include mixins.MQ(S){
+			padding: 0 0 0 0;
+		}
+
+		@include mixins.MQ(M){
+			padding: 0 30px 0 30px;
+		}
+
+		li{
+			font-family: variables.$moskau;
+			font-size: 1.6em;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.3;
+			letter-spacing: normal;
+			text-align: left;
+			color: variables.$slate;
+			padding: 0 0 0 40px;
+			margin: 0;
+			list-style: none;
+			line-height: 26px;
+			margin-bottom: 18px;
+			hyphens: auto;		
+
+			&:before{
+				width: 22px;
+				height: 22px;
+				background-image: url(../images/sprite.svg);
+				background-position: -14px -1044px;
+				background-color: transparent;
+				border-radius: 0;
+				top: 0;
+			}
+
+			b,
+			strong{
+				font-family: variables.$moskau-md;
+			}
+		}	
+
+	}
+
+	.block-prices{	
+
+		position: relative;
+		padding-top: 75px;
+
+		&:before{
+			width: 100%;
+			height: 450px;
+			background-color: #73e0bf;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			z-index: 0;
+		}
+
+		.wrap{
+			position: relative;
+			z-index: 1;
+		}
+
+		.price-item-holders{
+			margin-top: 75px;
+			margin-bottom: 90px;
+		}
+
+		.price-item {
+			padding: 30px;
+			background-color: rgb(246, 244, 239);
+			height: 100%;
+			position: relative;
+			border-radius: 8px;
+			overflow: hidden;
+
+			@include mixins.MQ(S){
+				padding: 20px;
+			}
+
+			@include mixins.MQ(M){
+				padding: 36px;
+			}
+
+			&:after{
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 66%;
+				background: rgb(255,255,255);
+				background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+				content: "";
+			}
+
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				z-index: 2;
+				position: relative;
+
+				.header-img-holder{
+					display: block;
+					width: 100%;
+					height: 150px;
+					background-repeat: no-repeat;
+					background-position: center center;
+					margin-bottom: 15px;
+				}
+
+			}
+
+			header{
+
+				h3{
+					font-family: variables.$moskau;
+					font-size: 3.2em;
+					text-align: center;
+					font-weight: 400;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.2;
+					letter-spacing: normal;
+					color: variables.$dark;
+					margin: 0;
+					padding: 0;
+				}
+
+			}
+
+		}
+
+		.price-calculator-holder{
+			padding: 0;
+
+			h3{
+				font-family: variables.$moskau-md;
+				font-size: 1.6em;
+				font-weight: 400;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				text-align: center;
+				color: variables.$dark;
+				margin: 20px 0 40px 0;
+				padding: 0;
+			}
+		}
+
+	}
+
+	.block-packages {
+
+		.zelf-samenstellen{
+			background-color: variables.$beachsand;
+			border-radius: 8px;
+			padding: 36px;
+		}
+
+		.running-tekst{
+			
+			h2{
+				font-family: variables.$moskau;
+				font-size: 3.2em;
+				line-height: 38px;
+				letter-spacing: 0px;
+				text-align: left;
+				transition: all .2s ease;
+				text-align: left;
+				color: variables.$blue;
+				margin-bottom: 18px;
+			}
+
+		}
+
+		.price-calculator-holder-item:hover{
+			h3{
+				color: variables.$dodger;
+			}
+		}
+
+	}
+
+	.price-calc-summary,
+	.price-pane{
+
+		.left-pane{
+
+			h2{
+				font-family: variables.$moskau-bd;
+				font-size: 1.8em;
+				font-weight: 400;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				color: variables.$dark;
+				margin-bottom: 12px;
+			}
+
+			p{
+				font-family: variables.$moskau;
+				font-size: 1.6em;
+				font-weight: 400;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				color: variables.$slate;
+				margin: 12px 0 0 0;
+
+				&:before{
+					content: "";
+					width: 26px;
+					height: 28px;
+					background-image: url(../images/sprite.svg);
+					background-position: -110px -459px;
+					display: inline-block;
+					margin-right: 12px;
+					position: relative;
+					top: 5px;
+				}
+
+			}
+
+			.category-holder{
+				margin-bottom: 45px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+	.price-calculator-holder{
+		position: relative;
+		text-align: center;
+
+		.deco-button{
+			width: 184px;
+			height: 184px;
+			background-color: variables.$beachsand;
+			border-radius: 184px;
+			margin: 0 auto 15px auto;
+			background-image: url(../images/tarieven/zelf.png);
+			background-size: 70% auto;
+			background-position: center center;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 50%;
+			margin-left: -92px;
+			top: -110px;
+		}
+
+		.blue-button{
+			margin-top: 45px;
+		}
+	}
+
+	.price-calc-summary{
+		.price-info p,
+		.price-holder p{
+			text-align: left;
+		}
+		
+		.price-holder{
+			padding: 21px 0 0 0;
+		}
+
+		.price-info{
+			margin: 21px 0;
+		}		
+
+		.price-info p{
+			padding: 0;
+			font-size: 1.4em;
+		}
+		.left-pane{
+		    padding: 30px 24px 0 24px;
+
+			.category-holder{
+				margin-bottom: 0;
+				padding-bottom: 30px;
+			}
+
+		} 
+
+		.bg-white{
+			padding: 10px 24px 30px 24px;
+		}
+
+	}
+
+	.block-accordion-result{
+
+		.holder{			
+			padding-top: 40px;
+		}
+
+		header{
+			padding: 40px 30px;
+
+			h1{
+				font-family: variables.$moskau-md;
+				font-size: 2.6emx;
+				font-weight: 400;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.2;
+				letter-spacing: normal;
+				color: variables.$white;
+			}
+		}
+
+		.left-pane,
+		.right-pane{
+			padding: 45px 30px;			
+		}
+
+		.right-pane{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			p{
+				text-align: center;
+			}	
+		}
+
+	}
+
+	.block-accordion-result,
+	.block-packages-accordion,
+	.block-packages {
+		&.wrap{
+			max-width: 1200px;
+		}	
+	}
+
+	.block-accordion-result{
+	
+		.header-holder{
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: row;
+			align-items: center;
+			flex-wrap: wrap;
+		}	
+	
+		h2{
+			font-family: variables.$moskau-md;
+			font-size: 2.6em;
+			line-height: 1.2;
+			letter-spacing: 0px;
+			color: variables.$dark;
+			margin-right: 24px;
+		}
+
+		p{
+			font-family: variables.$dm;
+			font-size: 1.6em;
+			font-weight: 400;
+			line-height: 1.4;
+			margin-top: 1px;
+		}
+		
+		.price-calculator-holder .deco-button{
+			background-color: white;
+			top: -70px;
+		}
+
+		.price-calculator-holder .blue-button{
+			margin-top: 30px;
+
+			@include mixins.MQ(S){
+				margin-top: 85px;
+			}
+
+		}
+
+	}
+
+	.block-packages-accordion{
+
+		background-color: variables.$beachsand;
+		width: 100%;
+
+		.messager{
+			width: 100%;
+			padding: 16px;
+			background-color: white;
+			border-radius: 8px;
+			margin: 60px 0 80px 0;
+			padding: 30px;
+
+			h3.nothing-selected{
+				text-align: center;
+				margin: 0;
+				color: #d1cec7;
+				font-family: variables.$moskau;
+				font-size: 2.6em;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 140%;
+				border-radius: 0.8rem;
+				background: rgba(240, 237, 229, 0.40);
+				padding: 24px 12px;
+			}
+		}		
+
+		.block-packages-accordion-holder{
+			background: white;
+			margin-top: 160px;
+			border-radius: 8px;
+
+			.uk-accordion-content{
+				padding: 0 30px 32px 30px;
+				margin-top: 0;
+				flex-direction: row;
+				justify-content: space-between;
+				text-align: center;		
+				display: inline-flex;
+				width: 100%;
+				flex-wrap: wrap;
+			}
+
+			a.uk-accordion-title{
+				margin: 0;
+				padding: 40px 30px 30px 30px;
+				font-family: variables.$moskau-md;
+				font-size: 2.4em;
+				font-weight: 400;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.2;
+				letter-spacing: normal;
+				color: variables.$dark;
+				border-top: 1px solid variables.$porcelain;
+				position: relative;
+
+				@include mixins.MQ(S){
+					font-size: 2.6em;
+				}
+
+				img{
+					width: 60px;
+					height: auto;
+					margin-right: 6px;
+					display: none;
+
+					@include mixins.MQ(S){
+						width: 100px;
+						margin-right: 12px;
+					}
+
+				}
+
+				&:before{
+					width: 30px;
+					height: 30px;
+					background-image: url(../images/sprite.svg);
+					background-position: -187px -682px;
+					position: absolute;
+					top: 38px;
+					right: 30px;
+				}
+			}
+
+			li:first-child a.uk-accordion-title{
+				border-top: none;
+			}
+
+			.uk-accordion > :nth-child(n+2){
+				margin-top: 0;
+			}
+
+			.uk-open > a.uk-accordion-title:before{
+				background-position: -238px -682px;
+			}
+
+			label{
+				margin-left: 4px;
+			}
+		}	
+
+		.blokje{
+			text-align: center;
+			padding: 24px 0 0 0;
+			flex: 0 0 100%;
+
+			@include mixins.MQ(S){
+				flex: 0 0 calc(33.33% - 20px);
+			}
+
+			.blok-wrap{
+				max-width: 720px;
+				border-radius: 8px;
+				cursor: pointer;
+				height: 100%;
+				background: rgba(240, 237, 229, 0.40);
+				padding: 36px 30px;
+				transition: all .2s ease;
+				cursor: pointer;
+
+				&.clicked{
+					background: rgba(22, 204, 148, .4);
+
+					&:before{
+						background-image: url(../images/sprite.svg);
+						background-position: -562px -202px;
+					}
+
+				}
+
+				&:hover{
+					background: rgba(22, 204, 148, .6);
+					transform: scale(1.025,1.025);
+				}
+
+				&:before{
+					display: inline-block;
+					width: 33px;
+					height: 33px;
+					background-color: white;
+					margin: 0 auto 10px auto;
+					content: "";
+					border-radius: 100%;
+					border: 1px solid rgb(223, 220, 213);
+				}
+
+				label{
+					flex-grow: 1;
+					text-align: center;
+					font-size: 24px;
+					// height: 100%;
+					margin: 0;
+					padding: 0;
+					display: flex;
+					flex-direction: row;	
+					justify-content: center;
+					align-items: center;
+					font-family: variables.$moskau;
+					font-size: 2.9em;
+					line-height: 1.2;
+					letter-spacing: 0px;
+					text-align: center;
+					color: variables.$dark;					
+				}
+
+				input[type=radio]{
+					position: absolute;
+					visibility: hidden;
+				}
+
+				input[type=radio]:checked ~ label{
+
+				}
+
+				input[type=checkbox]{
+					position: absolute;
+					visibility: hidden;
+				}
+
+				input[type=checkbox]:checked ~ label{
+
+				}				
+		
+
+			}	
+
+			h1{
+				font-family: variables.$dm;
+				font-size: 1.8em;
+				font-weight: 500;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.5;
+				letter-spacing: normal;
+				color: variables.$dark;
+				margin: 0 0 18px 0;
+				padding: 0;
+			}
+
+			p{
+				font-family: variables.$moskau;
+				font-size: 1.6em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.3;
+				letter-spacing: normal;
+				color: variables.$dark;
+				margin: 0;
+				padding: 0;
+				max-width: 480px;
+				hyphens: none;
+			}
+
+			.prijs{
+				font-family: variables.$moskau;
+				font-size: 1.6em;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: normal;
+				color: variables.$slate;
+				margin: 18px 0;
+			}
+		}
+
+	}
+
+}

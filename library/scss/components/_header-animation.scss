@@ -1,0 +1,61 @@
+@use "../partials/mixins";
+
+.page-header-holder.page-header-holder-wide.page-header-holder-animation{
+
+    display: none;
+
+    @include mixins.MQ(720px){
+        display: block;
+    }
+
+}
+
+.page-header-holder.page-header-holder-normal.page-header-holder-animation{
+
+    display: block;
+
+    @include mixins.MQ(720px){
+        display: none;
+    }
+
+}
+
+#lottie{
+    width:100%;
+    // height:100%;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    min-width: 1240px;
+    margin-left: -620px;
+
+    @include mixins.MQ(960px){
+        width: 1400px;
+        margin-left: -700px;
+    }
+
+    @include mixins.MQ(1040px){
+        width: 1560px;
+        margin-left: -780px;
+        bottom: -75px;
+    }    
+
+}
+
+.header-animation-holder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.page-header-holder .page-header{
+    position: relative;
+    z-index: 20;
+}
