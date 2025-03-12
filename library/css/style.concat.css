@@ -28787,6 +28787,11 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
     padding-left: 24px;
   }
 }
+@media (min-width: 1020px) {
+  .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder {
+    padding: 24px 32px;
+  }
+}
 .page-template-page-profiel .portfolio-item-nav {
   height: 42px;
   position: relative;

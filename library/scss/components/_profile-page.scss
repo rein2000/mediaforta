@@ -675,6 +675,10 @@
                 }
 
             }
+
+            @include MQ(M) {
+                padding: 24px 32px;
+            }
         }
 
     }
