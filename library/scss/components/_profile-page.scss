@@ -1,4 +1,4 @@
-@use "../partials/variables";
+@use "../partials/variables" as *;
 @use "../partials/mixins" as *;
 
 .page-template-page-profiel{
@@ -59,7 +59,7 @@
 
         h1{
             margin: 0;
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-size: 2.6em;
             font-weight: 400;
             line-height: 31.2px;
@@ -85,7 +85,7 @@
             }
 
             li{
-                font-family: variables.$moskau-md;
+                font-family: $moskau-md;
                 font-size: 1.6em;
                 font-weight: 400;
                 line-height: 1;
@@ -93,7 +93,7 @@
                 text-align: left;
                 text-underline-position: from-font;
                 text-decoration-skip-ink: none;
-                color: variables.$blue;
+                color: $blue;
                 background: white;
                 padding: 9px 16px 9px 16px;
                 border-radius: 6px;
@@ -105,7 +105,7 @@
             margin: 15px 0;
 
             p{
-                font-family: variables.$dm;
+                font-family: $dm;
                 font-size: 1.8em;
                 font-weight: 400;
                 line-height: 25.2px;
@@ -150,7 +150,7 @@
 
                 span.function-which{
                     display: inline-block;
-                    font-family: variables.$dm;
+                    font-family: $dm;
                     font-size: 1.4em;
                     font-weight: 500;
                     line-height: 1;
@@ -211,7 +211,7 @@
         }
 
         h2{
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-size: 2.6em;
             font-weight: 400;
             line-height: 31.2px;
@@ -233,7 +233,7 @@
         border-radius: 8px;
 
         h2{
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-style: normal;
             font-weight: 400;
             font-size: 2.2em;
@@ -288,7 +288,7 @@
             margin-bottom: 45px;
 
             p{
-                font-family: variables.$dm;
+                font-family: $dm;
                 font-style: normal;
                 font-weight: 500;
                 font-size: 1.8em;
@@ -315,7 +315,7 @@
         }
 
         h2{
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-style: normal;
             font-weight: 400;
             font-size: 2.2em;
@@ -364,6 +364,17 @@
 
         }
 
+        .cv-werkervaring {
+            h3:before {
+                display: none;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+
+        }
+
         .cv-werkervaring-item{
             padding: 0 0 40px 64px;
             border-bottom: 1px solid #DFDCD5;
@@ -398,7 +409,7 @@
         }
 
         h3{
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-style: normal;
             font-weight: 400;
             font-size: 2.2em;
@@ -423,7 +434,7 @@
 
         ul li,
         p{
-            font-family: variables.$dm;
+            font-family: $dm;
             font-style: normal;
             font-size: 1.8em;
             font-weight: 400;
@@ -526,7 +537,7 @@
         }
 
         h4{
-            font-family: variables.$moskau-md;
+            font-family: $moskau-md;
             font-size: 2.2em;
             line-height: 130%;
             text-align: center;
@@ -541,7 +552,7 @@
             }
         }
         p{
-            font-family: variables.$dm;
+            font-family: $dm;
             font-style: normal;
             font-weight: 400;
             font-size: 1.6em;
@@ -564,5 +575,142 @@
         }
     }
 
+    .portfolio-project-modal {
+
+        & > .uk-modal-dialog {
+            transform: translateY(0);
+            transition-property: opacity;
+        }
+
+        .uk-position-small{
+            margin: 0 -25px
+        }
+
+        .uk-modal-dialog.uk-modal-body {
+            padding: 60px 100px;
+            border-radius: 8px;
+        }
+
+        .uk-modal .uk-modal-dialog {
+            width: 1200px;
+        }
+
+        .work-with-link {
+            position: absolute;
+            top: 75px;
+            right: 100px;
+        }
+
+        h3{
+            margin: 0 0 3px 0;
+        }
+
+        .year {
+            font-family: $moskau;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.8em;
+            line-height: 140%;
+            color: $dark;
+            margin: 12px 0 3px 0;
+        }
+
+        .excerpt p {
+            font-family: $dm;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.8em;
+            line-height: 140%;
+            color: $dark;
+            max-width: 690px;
+            hyphens: none;
+            margin-top: 1em;
+        }
+
+        .tags {
+            margin: 18px 0 24px 0;
+        }
+
+        .slideshow-nav-holder {
+            background: #F0EDE5;
+            padding: 24px 32px;
+            border-radius: 8px;
+            margin-top: 24px;
+
+            ul {
+                margin-left: -24px;
+
+                li {
+                    padding-left: 24px;
+                }
+            }
+        }
+
+    }
+
+    .portfolio-item-nav{
+        height: 42px;
+        position: relative;
+        margin-top: 48px;
+
+        .back-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .blue-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .portfolio-item {
+
+        padding-bottom: 12px;
+
+        img {
+            border-radius: 8px;
+        }
+
+        h3 {
+            /* MF H4 Heading */
+            font-family: $moskau-md;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.2em;
+            line-height: 130%;
+            color: $dark;
+            margin: 12px 0;
+            padding: 0;
+        }
+
+        ul.tags {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+
+            li {
+                margin: 0;
+                padding: 9px 16px 9px 12px;
+                background: #F6F4EF;
+                border-radius: 6px;
+                font-family: $dm;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.4em;
+                line-height: 100%;
+                letter-spacing: 0.02em;
+                color: $dark;
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
 
 }
