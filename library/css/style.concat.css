@@ -28521,6 +28521,12 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
 .page-template-page-profiel .cv-details-holder h2.has-icon-portfolio:after {
   background-position: -818px -1444px;
 }
+.page-template-page-profiel .cv-details-holder .cv-werkervaring h3:before {
+  display: none;
+}
+.page-template-page-profiel .cv-details-holder .cv-werkervaring a:hover {
+  text-decoration: none;
+}
 .page-template-page-profiel .cv-details-holder .cv-werkervaring-item {
   padding: 0 0 40px 64px;
   border-bottom: 1px solid #DFDCD5;
@@ -28694,6 +28700,148 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
   .page-template-page-profiel .hoe-holder-item p {
     padding-bottom: 0;
   }
+}
+.page-template-page-profiel .portfolio-project-modal > .uk-modal-dialog {
+  transform: translateY(0);
+  transition-property: opacity;
+}
+.page-template-page-profiel .portfolio-project-modal .uk-position-small {
+  margin: 20px -15px;
+}
+@media (min-width: 1020px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-position-small {
+    margin: 0 -25px;
+  }
+}
+.page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
+  padding: 20px 30px 30px 30px;
+  border-radius: 8px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
+    padding: 30px 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
+    padding: 60px 100px;
+  }
+}
+.page-template-page-profiel .portfolio-project-modal .uk-modal .uk-modal-dialog {
+  width: 1200px;
+}
+.page-template-page-profiel .portfolio-project-modal .work-with-link {
+  margin-top: 24px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .work-with-link {
+    position: absolute;
+    top: 45px;
+    right: 90px;
+    margin-top: 0;
+  }
+}
+.page-template-page-profiel .portfolio-project-modal h3 {
+  margin: 0 0 3px 0;
+}
+.page-template-page-profiel .portfolio-project-modal .year {
+  font-family: "MoskauGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 140%;
+  color: #17285d;
+  margin: 12px 0 3px 0;
+}
+.page-template-page-profiel .portfolio-project-modal .excerpt p {
+  font-family: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 140%;
+  color: #17285d;
+  max-width: 690px;
+  hyphens: none;
+  margin-top: 1em;
+}
+.page-template-page-profiel .portfolio-project-modal .tags {
+  margin: 18px 0 24px 0;
+}
+.page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder {
+  background: #F0EDE5;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+.page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul {
+  margin-left: -12px;
+}
+.page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul li {
+  padding-left: 12px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul {
+    margin-left: -24px;
+  }
+  .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul li {
+    padding-left: 24px;
+  }
+}
+.page-template-page-profiel .portfolio-item-nav {
+  height: 42px;
+  position: relative;
+  margin-top: 48px;
+}
+.page-template-page-profiel .portfolio-item-nav .back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-template-page-profiel .portfolio-item-nav .blue-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.page-template-page-profiel .portfolio-item {
+  padding-bottom: 12px;
+}
+.page-template-page-profiel .portfolio-item img {
+  border-radius: 8px;
+}
+.page-template-page-profiel .portfolio-item h3 {
+  /* MF H4 Heading */
+  font-family: "MoskauGrotesk-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2em;
+  line-height: 130%;
+  color: #17285d;
+  margin: 12px 0;
+  padding: 0;
+}
+.page-template-page-profiel .portfolio-item ul.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.page-template-page-profiel .portfolio-item ul.tags li {
+  margin: 0;
+  padding: 9px 16px 9px 12px;
+  background: #F6F4EF;
+  border-radius: 6px;
+  font-family: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4em;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #17285d;
+}
+.page-template-page-profiel .portfolio-item ul.tags li:before {
+  display: none;
 }
 
 /*********************

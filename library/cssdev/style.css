@@ -16969,19 +16969,40 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
   transition-property: opacity;
 }
 .page-template-page-profiel .portfolio-project-modal .uk-position-small {
-  margin: 0 -25px;
+  margin: 20px -15px;
+}
+@media (min-width: 1020px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-position-small {
+    margin: 0 -25px;
+  }
 }
 .page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
-  padding: 60px 100px;
+  padding: 20px 30px 30px 30px;
   border-radius: 8px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
+    padding: 30px 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-template-page-profiel .portfolio-project-modal .uk-modal-dialog.uk-modal-body {
+    padding: 60px 100px;
+  }
 }
 .page-template-page-profiel .portfolio-project-modal .uk-modal .uk-modal-dialog {
   width: 1200px;
 }
 .page-template-page-profiel .portfolio-project-modal .work-with-link {
-  position: absolute;
-  top: 75px;
-  right: 100px;
+  margin-top: 24px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .work-with-link {
+    position: absolute;
+    top: 45px;
+    right: 90px;
+    margin-top: 0;
+  }
 }
 .page-template-page-profiel .portfolio-project-modal h3 {
   margin: 0 0 3px 0;
@@ -17011,15 +17032,23 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
 }
 .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder {
   background: #F0EDE5;
-  padding: 24px 32px;
+  padding: 12px 18px;
   border-radius: 8px;
   margin-top: 24px;
 }
 .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul {
-  margin-left: -24px;
+  margin-left: -12px;
 }
 .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul li {
-  padding-left: 24px;
+  padding-left: 12px;
+}
+@media (min-width: 720px) {
+  .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul {
+    margin-left: -24px;
+  }
+  .page-template-page-profiel .portfolio-project-modal .slideshow-nav-holder ul li {
+    padding-left: 24px;
+  }
 }
 .page-template-page-profiel .portfolio-item-nav {
   height: 42px;
@@ -17058,6 +17087,7 @@ body.has-banner:not(.page-template-page-sea-php) .mm-ocd {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .page-template-page-profiel .portfolio-item ul.tags li {

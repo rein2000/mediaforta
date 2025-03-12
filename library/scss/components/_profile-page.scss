@@ -583,12 +583,25 @@
         }
 
         .uk-position-small{
-            margin: 0 -25px
+            margin: 20px -15px;
+
+            @include MQ(M) {
+                margin: 0 -25px;
+            }  
+
         }
 
         .uk-modal-dialog.uk-modal-body {
-            padding: 60px 100px;
+            padding: 20px 30px 30px 30px;
             border-radius: 8px;
+
+            @include MQ(S) {
+                padding: 30px 50px;
+            }
+
+            @include MQ(L) {
+                padding: 60px 100px;
+            }
         }
 
         .uk-modal .uk-modal-dialog {
@@ -596,9 +609,15 @@
         }
 
         .work-with-link {
-            position: absolute;
-            top: 75px;
-            right: 100px;
+            margin-top: 24px;
+
+            @include MQ(S) {
+                position: absolute;
+                top: 45px;
+                right: 90px;
+                margin-top: 0;
+            }        
+        
         }
 
         h3{
@@ -633,16 +652,28 @@
 
         .slideshow-nav-holder {
             background: #F0EDE5;
-            padding: 24px 32px;
+            padding: 12px 18px;
             border-radius: 8px;
             margin-top: 24px;
 
             ul {
-                margin-left: -24px;
+                margin-left: -12px;
 
                 li {
-                    padding-left: 24px;
+                    padding-left: 12px;
                 }
+            }
+
+            @include MQ(S) {
+             
+                ul {
+                    margin-left: -24px;
+    
+                    li {
+                        padding-left: 24px;
+                    }
+                }
+
             }
         }
 
@@ -691,6 +722,7 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
             gap: 10px;
 
             li {
